@@ -33,5 +33,4 @@ public class ReceberService {
 	public String total_a_receber() {
 		return receberRepo.total_a_receber();
 	}
-
 }
