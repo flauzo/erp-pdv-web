@@ -31,5 +31,4 @@ public class CategoriaService {
 	public Optional<Categoria> busca(Long codigo) {
 		return categorias.findById(codigo);
 	}
-
 }
