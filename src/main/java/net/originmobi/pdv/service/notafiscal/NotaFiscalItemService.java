@@ -51,7 +51,7 @@ public class NotaFiscalItemService {
 		Long codImposto = null;
 		Long codNotaItem = null;
 
-		// verifica se já tem o item
+		// verifica se já tem o item.
 		for (int i = 0; i < notaFiscal.map(NotaFiscal::getItens).get().size(); i++) {
 			if (notaFiscal.map(NotaFiscal::getItens).get().get(i).getCodProd().equals(prod)) {
 
@@ -67,7 +67,7 @@ public class NotaFiscalItemService {
 		int modBcIcms = produto.map(Produto::getModBcIcms).get().getTipo();
 		Double vlUnidade = produto.map(Produto::getValor_venda).get();
 
-		// pega uf do destinatário
+		// pega uf do destinatário.
 		String ufDestinatario = notaFiscal.map(NotaFiscal::getDestinatario).get().getEndereco().getCidade().getEstado()
 				.getSigla();
 
@@ -75,7 +75,7 @@ public class NotaFiscalItemService {
 
 		// pega a regra da tributação do produto que é da mesma uf do destinatário e do
 		// mesmo
-		// estilo da nota
+		// estilo da nota.
 		for (int i = 0; i < produto.map(Produto::getTributacao).get().getRegra().size(); i++) {
 			String ufRegra = produto.map(Produto::getTributacao).get().getRegra().get(i).getUf().getSigla();
 			String tipoRegra = produto.map(Produto::getTributacao).get().getRegra().get(i).getTipo().toString();
@@ -89,18 +89,18 @@ public class NotaFiscalItemService {
 		}
 
 		if (regra == null)
-			throw new RuntimeException("Nenhuma regra de tributação cadastrada para a UF do destinatário");
+			throw new RuntimeException("Nenhuma regra de Tributação cadastrada para a UF do destinatário.");
 
 		String cfop = regra.getCfop().getCfop();
 
-		// calcula impostos da nota
+		// calcula impostos da nota.
 		NotaFiscalItemImposto imposto = impostos.calcula(codImposto, vlTotal, regra, origin, modBcIcms);
 
-		// cria item da nota com imposto vinculado
+		// cria item da nota com imposto vinculado.
 		NotaFiscalItem item = new NotaFiscalItem(prod, qtd, vlTotal, uniTribu, qtd, vlUnidade, notaFiscal.get(),
 				imposto, cfop);
 
-		// se for diferente de null, se trata de uma atualização
+		// se for diferente de null, se trata de uma atualização.
 		if (codNotaItem != null)
 			item.setCodigo(codNotaItem);
 
@@ -108,10 +108,10 @@ public class NotaFiscalItemService {
 			itemServer.save(item);
 		} catch (Exception e) {
 			System.out.println(e);
-			throw new RuntimeException("Erro ao salvar item na nota, chame o suporte");
+			throw new RuntimeException("Erro ao salvar Item na Nota, chame o suporte.");
 		}
 
-		// atualiza totais da nota
+		// atualiza totais da nota.
 		NotaFiscalTotais total = notaFiscal.get().getTotais();
 		Long codNota = notaFiscal.get().getCodigo();
 		totais.atualiza(codNota, total);
@@ -126,7 +126,7 @@ public class NotaFiscalItemService {
 			itemServer.deleteById(notaitem);
 		} catch (Exception e) {
 			System.out.println(e);
-			throw new RuntimeException("Erro ao tentar remover o item da nota, chame o suporte");
+			throw new RuntimeException("Erro ao tentar remover o Item da Nota, chame o suporte.");
 		}
 		
 		Optional<NotaFiscal> notaFiscal = notas.busca(codnota);
@@ -136,10 +136,10 @@ public class NotaFiscalItemService {
 
 	private void verificaRegraDeTributacao(NotaFiscalTipo tipo, Optional<Produto> produto) {
 		if (!produto.isPresent())
-			throw new RuntimeException("Nenhum produto encontrado, favor verifique");
+			throw new RuntimeException("Nenhum produto encontrado, favor verifique.");
 
 		if (!produto.map(Produto::getTributacao).isPresent())
-			throw new RuntimeException("Produto sem tributação, favor verifique");
+			throw new RuntimeException("Produto sem Tributação, favor verifique.");
 
 		if (produto.map(Produto::getNcm).get().isEmpty())
 			throw new RuntimeException("Produto sem código NCM, favor verifique");
@@ -149,10 +149,10 @@ public class NotaFiscalItemService {
 			throw new RuntimeException("Produto de substituição tributária sem código CEST, favor verifique");
 
 		if (produto.map(Produto::getUnidade).get().isEmpty())
-			throw new RuntimeException("Produto sem unidade, favor verifique");
+			throw new RuntimeException("Produto sem unidade, favor verifique.");
 
 		// verifica se a tributação do produto possue regra para o estilo de nota
-		// selecionado
+		// selecionado.
 		if (tipo.equals(NotaFiscalTipo.SAIDA)) {
 			int aux = 0;
 			for (int i = 0; i < produto.map(Produto::getTributacao).get().getRegra().size(); i++) {
@@ -161,7 +161,7 @@ public class NotaFiscalItemService {
 			}
 
 			if (aux == 0)
-				throw new RuntimeException("Tributação sem regra de saída, verifique");
+				throw new RuntimeException("Tributação sem regra de saída, verifique.");
 		} else {
 			int aux = 0;
 			for (int i = 0; i < produto.map(Produto::getTributacao).get().getRegra().size(); i++) {
@@ -170,12 +170,11 @@ public class NotaFiscalItemService {
 			}
 
 			if (aux == 0)
-				throw new RuntimeException("Tributação sem regra de entrada, verifique");
+				throw new RuntimeException("Tributação sem regra de entrada, verifique.");
 		}
 	}
 
 	public List<Object> buscaItensNota(Long codigo) {
 		return itemServer.findByNotaFiscalCodigoEquals(codigo);
 	}
-
 }
