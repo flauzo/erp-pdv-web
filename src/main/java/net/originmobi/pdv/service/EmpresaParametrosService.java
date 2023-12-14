@@ -21,5 +21,4 @@ public class EmpresaParametrosService {
 	public void cadastro(EmpresaParametro parametro) {
 		parametros.save(parametro);
 	}
-
 }
