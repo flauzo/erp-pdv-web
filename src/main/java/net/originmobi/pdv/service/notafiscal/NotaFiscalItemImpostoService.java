@@ -32,7 +32,7 @@ public class NotaFiscalItemImpostoService {
 				vlIcms, vlCst_pis, bc_pis, pis, vlPis, bc_cofins, aliqCofins, vlCofins, cst, cst_ipi, vbc_ipi, p_ipi,
 				v_ipi);
 
-		// se o código for diferente de null, se trata de uma atualização
+		// se o código for diferente de null, se trata de uma atualização.
 		if (codimposto != null)
 			imposto.setCodigo(codimposto);
 
@@ -40,9 +40,8 @@ public class NotaFiscalItemImpostoService {
 			impostos.save(imposto);
 		} catch (Exception e) {
 			System.out.println(e);
-			throw new RuntimeException("Erro ao lançar impostos na nota, chame o suporte");
+			throw new RuntimeException("Erro ao Lançar Impostos na nota, chame o suporte.");
 		}
-
 		return imposto;
 	}
 
@@ -69,17 +68,16 @@ public class NotaFiscalItemImpostoService {
 		Double aliqIPI = regra.getAliq_ipi();
 		Double vlIPI = (bcIPI * aliqIPI) / 100;
 
-		// cadastra os impostos do produto
+		// cadastra os impostos do produto.
 		NotaFiscalItemImposto imposto = null;
 		try {
 			imposto = merger(codimposto, origin, cst_cofins.getCst(), modBcIcms, bc_icms, aliq_icms, vlIcms, cst_pis,
 					bc_pis, pis, vlPis, bc_cofins, aliqCofins, vlCofins, cst_csosn, cst_ipi, bcIPI, aliqIPI, vlIPI);
 		} catch (Exception e) {
 			System.out.println(e);
-			throw new RuntimeException("erro ao calcular os impostos da nota");
+			throw new RuntimeException("erro ao Calcular os impostos da nota.");
 		}
 
 		return imposto;
 	}
-
 }
