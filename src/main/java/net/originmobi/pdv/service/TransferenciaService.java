@@ -37,13 +37,13 @@ public class TransferenciaService {
 			throw new RuntimeException("Destino é inválido");
 
 		if (!caiOrigem.isPresent() || caiOrigem.map(Caixa::getData_fechamento).isPresent())
-			throw new RuntimeException("Conta origem não esta aberta, verifique");
+			throw new RuntimeException("Conta Origem não esta aberta, verifique.");
 
 		if (!caiDestino.isPresent() || caiDestino.map(Caixa::getData_fechamento).isPresent())
-			throw new RuntimeException("Conta destino não esta aberta, verifique");
+			throw new RuntimeException("Conta Destino não esta aberta, verifique.");
 
 		if (caiOrigem.map(Caixa::getValor_total).get() < valor)
-			throw new RuntimeException("Saldo insuficiente para realizar a transferência");
+			throw new RuntimeException("Saldo Insuficiente para realizar a transferência.");
 
 		Transferencia transferencia = new Transferencia(valor, dataAtual.dataAtualTimeStamp(), caiOrigem.get(),
 				caiDestino.get(), usuario, "Transferencia para o " + caiDestino.map(Caixa::getDescricao).get() + " "
@@ -52,10 +52,9 @@ public class TransferenciaService {
 		try {
 			transferencias.save(transferencia);
 		} catch (Exception e) {
-			throw new RuntimeException("Erro ao realizar a transferencia, chame o suporte");
+			throw new RuntimeException("Erro ao realizar a transferencia, chame o suporte.");
 		}
 
-		return "Transferência realizada com sucesso";
+		return "Transferência realizada com sucesso.";
 	}
-
 }
