@@ -1,7 +1,6 @@
 package net.originmobi.pdv.utilitarios;
 
 import java.sql.SQLException;
-
 import javax.sql.DataSource;
 
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
