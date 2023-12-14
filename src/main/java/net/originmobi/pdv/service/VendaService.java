@@ -95,9 +95,7 @@ public class VendaService {
 			} catch (Exception e) {
 				e.getStackTrace();
 			}
-
 		}
-
 		return venda.getCodigo();
 	}
 
@@ -128,7 +126,6 @@ public class VendaService {
 		} else {
 			return "Venda fechada";
 		}
-
 		return "ok";
 	}
 
@@ -142,7 +139,6 @@ public class VendaService {
 		} catch (Exception e) {
 			e.getStackTrace();
 		}
-
 		return "ok";
 	}
 
@@ -165,11 +161,10 @@ public class VendaService {
 
 		String[] formaPagar = formaPagamento.getFormaPagamento().replace("/", " ").split(" ");
 
-		// vlTotal é usado no lancamento
+		// vlTotal é usado no lancamento.
 		Double vlTotal = (vlprodutos + acrescimo) - desconto;
 
 		int qtdVezes = formaPagar.length;
-
 		int sequencia = 1;
 
 		// crio este MAP para receber todas as formas de pagamento e poder
@@ -183,7 +178,7 @@ public class VendaService {
 		Venda dadosVenda = vendas.findByCodigoEquals(venda);
 		dadosVenda.setPagamentotipo(formaPagamento);
 
-		// gera um receber
+		// gera um receber.
 		Receber receber = new Receber("Recebimento referente a venda " + venda, vlTotal, dadosVenda.getPessoa(),
 				dataAtual.dataAtualTimeStamp(), dadosVenda);
 
@@ -197,23 +192,23 @@ public class VendaService {
 		Double desc = desconto / vlParcelas.length;
 		Double acre = acrescimo / vlParcelas.length;
 
-		// verifica a forma de pagamento para realizar o lançamento apropriado
+		// verifica a Forma de Pagamento para realizar o lançamento apropriado.
 		for (int i = 0; i < formaPagar.length; i++) {
 			Optional<Titulo> titulo = tituloService.busca(Long.decode(titulos[i]));
 
-			// venda à vista
+			// venda à vista.
 			if (formaPagar[i].equals("00")) {
 
-				// no dinheiro
+				// no Dinheiro.
 				if (titulo.get().getTipo().getSigla().equals(TituloTipo.DIN.toString())) {
-					// verifica se o caixa esta aberto para realizar o lançamento no mesmo
+					// verifica se o Caixa esta aberto para realizar o lançamento no mesmo.
 					if (!caixas.caixaIsAberto())
 						throw new RuntimeException("nenhum caixa aberto");
 
 					qtdVezes = avistaDinheiro(vlprodutos, vlParcelas, formaPagar, qtdVezes, i, desc, acre);
 				}
 
-				// se for no cartão de debito ou crédito
+				// se for no Cartão de Debito ou Crédito.
 				else if (titulo.get().getTipo().getSigla().equals(TituloTipo.CARTDEB.toString())
 						|| titulo.get().getTipo().getSigla().equals(TituloTipo.CARTCRED.toString())) {
 
@@ -223,7 +218,7 @@ public class VendaService {
 				}
 
 			} else {
-				// venda a prazo
+				// venda a Prazo.
 
 				if (dadosVenda.getPessoa() == null)
 					throw new RuntimeException("Venda sem cliente, verifique");
@@ -235,31 +230,30 @@ public class VendaService {
 
 			try {
 				Double vlFinal = (vlprodutos + acrescimo) - desconto;
-				// realiza o fechamento da venda
+				// realiza o Fechamento da venda.
 				vendas.fechaVenda(venda, VendaSituacao.FECHADA, vlFinal, desconto, acrescimo,
 						dataAtual.dataAtualTimeStamp(), formaPagamento);
 			} catch (Exception e) {
 				System.out.println(e);
 				throw new RuntimeException("Erro ao fechar a venda, chame o suporte");
 			}
-
 		}
 		
-		// Responsável por realizar a movimentação de estoque
+		// Responsável por realizar a Movimentação de estoque.
 		produtos.movimentaEstoque(venda, EntradaSaida.SAIDA);
 
 		return "Venda finalizada com sucesso";
 	}
 
 	/*
-	 * Responsável por realizar o lançamento quando a parcela da venda é a prazo
+	 * Responsável por realizar o Lançamento quando a parcela da venda é a prazo.
 	 * 
 	 */
 	private int aprazo(Double vlprodutos, String[] vlParcelas, DataAtual dataAtual, String[] formaPagar, int qtdVezes,
 			int sequencia, Receber receber, int i, Double acre, Double desc) {
 
 		if (vlParcelas[i].isEmpty()) {
-			throw new RuntimeException("valor de recebimento invalido");
+			throw new RuntimeException("valor de recebimento invalido.");
 		}
 
 		try {
@@ -279,14 +273,14 @@ public class VendaService {
 
 	/*
 	 * Responsável por realizar o lançamento quando a parcela da venda é à vista e
-	 * no dinheiro
+	 * no dinheiro.
 	 * 
 	 */
 	private int avistaDinheiro(Double vlprodutos, String[] vlParcelas, String[] formaPagar, int qtdVezes, int i,
 			Double acre, Double desc) {
 
 		// decremento ela para usa-la no a prazo, sem a sequencia do a
-		// vista
+		// vista.
 		qtdVezes = qtdVezes - 1;
 
 		if (vlParcelas[i].isEmpty())
@@ -294,12 +288,12 @@ public class VendaService {
 
 		Double totalParcelas = 0.0;
 
-		// pega a soma de todas as parcelas para comparar com o valor recebido
+		// pega a soma de todas as Parcelas para comparar com o valor recebido.
 		for (int aux = 0; aux < vlParcelas.length; aux++)
 			totalParcelas += Double.valueOf(vlParcelas[i]);
 
 		if (!totalParcelas.equals(vlprodutos))
-			throw new RuntimeException("Valor das parcelas diferente do valor total de produtos, verifique");
+			throw new RuntimeException("Valor das parcelas diferente do valor total de produtos, verifique.");
 
 		Optional<Caixa> caixa = caixas.caixaAberto();
 
@@ -307,7 +301,7 @@ public class VendaService {
 		Usuario usuario = usuarios.buscaUsuario(aplicacao.getUsuarioAtual());
 
 		Double valor_parcela = (Double.valueOf(vlParcelas[i]) + acre) - desc;
-		CaixaLancamento lancamento = new CaixaLancamento("Recebimento de venda á vista", valor_parcela,
+		CaixaLancamento lancamento = new CaixaLancamento("Recebimento de venda á Vista", valor_parcela,
 				TipoLancamento.RECEBIMENTO, EstiloLancamento.ENTRADA, caixa.get(), usuario);
 
 		try {
@@ -327,5 +321,4 @@ public class VendaService {
 	public int qtdAbertos() {
 		return vendas.qtdVendasEmAberto();
 	}
-
 }
