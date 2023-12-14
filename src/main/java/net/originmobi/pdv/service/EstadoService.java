@@ -17,5 +17,4 @@ public class EstadoService {
 	public List<Estado> lista() {
 		return estados.findAll();
 	}
-
 }
