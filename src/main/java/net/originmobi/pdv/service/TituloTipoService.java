@@ -17,5 +17,4 @@ public class TituloTipoService {
 	public List<TituloTipo> lista() {
 		return tipos.findAll();
 	}
-
 }
