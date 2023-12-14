@@ -51,11 +51,11 @@ public class FornecedorService {
 				fornecedor.setData_cadastro(Date.valueOf(dataAtual));
 				fornecedores.save(fornecedor);
 			} else {
-				return "CNPJ já cadastrado";
+				return "CNPJ já cadastrado.";
 			}
 		}
 
-		return "Fornecedor salvo com sucesso";
+		return "Fornecedor salvo com sucesso.";
 	}
 
 	public List<Fornecedor> lista() {
@@ -70,5 +70,4 @@ public class FornecedorService {
 	public Optional<Fornecedor> busca(Long codigo) {
 		return fornecedores.findById(codigo);
 	}
-
 }
