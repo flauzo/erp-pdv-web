@@ -42,12 +42,12 @@ public class CaixaLancamentoService {
 			}
 
 			// se for realizar uma saida de caixa, verifica se tem saldo
-			// suficiente para isso
+			// suficiente para isso.
 			if (lancamento.getEstilo().equals(EstiloLancamento.SAIDA)) {
 				Optional<Double> vlTotalCaixa = lancamento.getCaixa().map(Caixa::getValor_total);
 				
 				if (lancamento.getValor() > vlTotalCaixa.get()) {
-					return "Saldo insuficiente para realizar esta operação";
+					return "Saldo Insuficiente para realizar esta operação.";
 				}
 			}
 
@@ -79,7 +79,7 @@ public class CaixaLancamentoService {
 			caixaLancamento.save(lancamento);
 		} catch (Exception e) {
 			e.getMessage();
-			throw new RuntimeException("Erro ao realizar lançamento, chame o suporte");
+			throw new RuntimeException("Erro ao realizar Lançamento, chame o suporte.");
 		}
 
 		return "Lançamento realizado com sucesso";
