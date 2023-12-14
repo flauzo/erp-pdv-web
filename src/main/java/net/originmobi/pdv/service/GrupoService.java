@@ -31,5 +31,4 @@ public class GrupoService {
 	public Optional<Grupo> busca(Long codigo) {
 		return grupos.findById(codigo);
 	}
-
 }
