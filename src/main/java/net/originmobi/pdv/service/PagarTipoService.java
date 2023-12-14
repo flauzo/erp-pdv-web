@@ -22,5 +22,4 @@ public class PagarTipoService {
 	public Optional<PagarTipo> busca(Long codigo) {
 		return pagartipos.findById(codigo);
 	}
-
 }
