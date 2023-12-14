@@ -64,17 +64,17 @@ public class PagarService {
 			pagarRepo.save(pagar);
 		} catch (Exception e) {
 			e.getMessage();
-			throw new RuntimeException("Erro ao lançar despesa, chame o suporte");
+			throw new RuntimeException("Erro ao Lançar Despesa, chame o suporte.");
 		}
 
 		try {
 			pagarParcelaServ.cadastrar(valor, valor, 0, dataTime.dataAtualTimeStamp(), vencimento, pagar);
 		} catch (Exception e) {
 			e.getStackTrace();
-			throw new RuntimeException("Erro ao lançar despesa, chame o suporte");
+			throw new RuntimeException("Erro ao Lançar Despesa, chame o suporte.");
 		}
 
-		return "Despesa lançada com sucesso";
+		return "Despesa lançada com sucesso.";
 	}
 
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRED)
@@ -85,7 +85,7 @@ public class PagarService {
 		DecimalFormat df = new DecimalFormat("#0.00");
 
 		if (vlPago > Double.valueOf(df.format(parcela.map(PagarParcela::getValor_restante).get()).replace(",", ".")))
-			throw new RuntimeException("Valor de pagamento inválido");
+			throw new RuntimeException("Valor de pagamento inválido.");
 
 		Double vlquitado = (vlPago + vlacre) + parcela.map(PagarParcela::getValor_pago).get();
 		Double vlRestante = (parcela.map(PagarParcela::getValor_restante).get() - (vlPago + vldesc));
@@ -109,7 +109,7 @@ public class PagarService {
 			pagarParcelaServ.merger(parcela.get());
 		} catch (Exception e) {
 			e.getMessage();
-			throw new RuntimeException("Ocorreu um erro ao realizar o pagamento, chame o suporte");
+			throw new RuntimeException("Ocorreu um erro ao Realizar o Pagamento, chame o suporte.");
 		}
 
 		Aplicacao aplicacao = Aplicacao.getInstancia();
@@ -118,7 +118,7 @@ public class PagarService {
 		Optional<Caixa> caixa = caixas.busca(codCaixa);
 
 		if (vlPago + vlacre > caixa.map(Caixa::getValor_total).get())
-			throw new RuntimeException("Saldo insuficiente para realizar este pagamento");
+			throw new RuntimeException("Saldo Insuficiente para realizar este pagamento.");
 
 		try {
 			CaixaLancamento lancamento = new CaixaLancamento("Referente a pagamento de despesas", vlPago + vlacre,
@@ -130,10 +130,9 @@ public class PagarService {
 			lancamentos.lancamento(lancamento);
 		} catch (Exception e) {
 			e.getMessage();
-			throw new RuntimeException("Ocorreu um erro ao realizar o pagamento, chame o suporte");
+			throw new RuntimeException("Ocorreu um erro ao Realizar o Pagamento, chame o suporte.");
 		}
 
-		return "Pagamento realizado com sucesso";
+		return "Pagamento realizado com sucesso.";
 	}
-
 }
