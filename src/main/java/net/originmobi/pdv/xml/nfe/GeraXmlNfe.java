@@ -16,7 +16,7 @@ public class GeraXmlNfe {
 	private NotaFiscalService nfServer;
 
 	/*
-	 * Recebe uma notafiscal e retorna a chave de acesso da mesma
+	 * Recebe uma notafiscal e retorna a chave de acesso da mesma.
 	 */
 	public String gerarXML(NotaFiscal notaFiscal) {
 		XStream valor = new XStream(new DomDriver());
