@@ -48,5 +48,4 @@ public class PagarParcelaService {
 	public String totalParagarAberto() {
 		return parcelas.valorDespesasAbertas();
 	}
-
 }
