@@ -17,5 +17,4 @@ public class CstCsosnService {
 	public List<CstCsosn> lista() {
 		return repository.findAll();
 	}
-
 }
