@@ -38,29 +38,28 @@ public class ImagemProdutoService {
 
 		Random vlAleatorio = new Random();
 
-		// aqui pego o contexto da aplicação
+		// aqui pego o contexto da aplicação.
 		try {
 			contexto = new File(".").getCanonicalPath();
 		} catch (IOException e1) {
 			e1.printStackTrace();
-			return "erro ao pegar o contexto da aplicação";
+			return "erro ao pegar o Contexto da aplicação.";
 		}
 
-		// defino o diretorio onde será salva a imagem
+		// defino o diretorio onde será salva a imagem.
 		DIRETORIO = Paths.get(contexto.toString().replace("/bin", "") + "/webapps/pdv/WEB-INF/classes/static/imagens-produtos/");
 
-		// altero o nome da imagem e o seu tipo para jpg
+		// altero o nome da imagem e o seu tipo para jpg.
 		String imagemNovaDescricao = file.getOriginalFilename().replaceAll(file.getOriginalFilename(),
 				"imagem" + "-" + vlAleatorio.nextInt() + ".jpg");
 
 		FileOutputStream output = new FileOutputStream(DIRETORIO.toString() + "/" + imagemNovaDescricao);
-		
 
 		try {
 			output.write(file.getBytes());
 		} catch (IOException e) {
 			e.printStackTrace();
-			return "erro ao salvar aquivo no diretorio";
+			return "erro ao Salvar aquivo no diretorio.";
 		}
 
 		removeImagem(codigoProduto);
@@ -80,7 +79,7 @@ public class ImagemProdutoService {
 			imagens.save(imagemProduto);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return "erro ao gravar imagem no banco de dados";
+			return "erro ao Gravar imagem no banco de dados.";
 		}
 		return "ok";
 	}
@@ -102,5 +101,4 @@ public class ImagemProdutoService {
 		ImagemProduto imagem = imagens.findByProdutoCodigo(codigoProduto);
 		return imagem == null ? imagemPadrao : imagem;
 	}
-
 }
