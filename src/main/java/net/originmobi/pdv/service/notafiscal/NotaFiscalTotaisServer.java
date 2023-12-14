@@ -46,8 +46,7 @@ public class NotaFiscalTotaisServer {
 			totais.save(total);
 		} catch (Exception e) {
 			System.out.println(e);
-			throw new RuntimeException("Erro ao salvar item na nota, chame o suporte");
+			throw new RuntimeException("Erro ao Salvar Item na Nota, chame o suporte.");
 		}
 	}
-
 }
