@@ -77,10 +77,10 @@ public class AjusteService {
 		try {
 			ajustes.save(ajuste.get());
 		} catch (Exception e) {
-			throw new RuntimeException("Erro ao tentar processar o ajuste, chame o suporte");
+			throw new RuntimeException("Erro ao tentar Processar o ajuste, chame o suporte.");
 		}
 
-		return "Ajuste realizado com sucesso";
+		return "Ajuste realizado com sucesso.";
 	}
 
 	public void remover(Ajuste ajuste) {
@@ -91,8 +91,7 @@ public class AjusteService {
 		try {
 			ajustes.deleteById(ajuste.getCodigo());
 		} catch (Exception e) {
-			throw new RuntimeException("Erro ao tentar cancelar o ajuste");
+			throw new RuntimeException("Erro ao tentar Cancelar o ajuste.");
 		}
 	}
-
 }
