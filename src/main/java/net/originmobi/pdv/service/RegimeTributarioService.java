@@ -22,5 +22,4 @@ public class RegimeTributarioService {
 	public Optional<RegimeTributario> busca(Long codigo) {
 		return regimestributarios.findById(codigo);
 	}
-
 }
