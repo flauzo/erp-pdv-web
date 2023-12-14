@@ -24,7 +24,6 @@ public class TelefoneService {
 		} catch (Exception e) {
 			e.getStackTrace();
 		}
-
 		return telefone;
 	}
 
@@ -32,3 +31,4 @@ public class TelefoneService {
 		return telefones.findByCodigoIn(codigo);
 	}
 }
+
