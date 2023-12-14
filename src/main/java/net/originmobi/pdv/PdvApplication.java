@@ -27,5 +27,4 @@ public class PdvApplication extends SpringBootServletInitializer {
 	public LocaleResolver localeResolver() {
 		return new FixedLocaleResolver(new Locale("pt", "BR"));
 	}
-
 }
