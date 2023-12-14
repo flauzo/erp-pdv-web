@@ -40,5 +40,4 @@ public class PagamentoTipoService {
 		String qtd = pagamentotipo.quantidadeParcelar(codigo);
 		return qtd;
 	}
-
 }
