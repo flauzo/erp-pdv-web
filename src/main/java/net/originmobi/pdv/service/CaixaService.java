@@ -45,7 +45,7 @@ public class CaixaService {
 			throw new RuntimeException("Existe caixa de dias anteriores em aberto, favor verifique");
 
 		// caso o valor de abertura seja null, modifica o mesmo para 0.0, esse valor é
-		// adicionado tambem no valor_total
+		// adicionado tambem no valor_total.
 		Double vlbertura = caixa.getValor_abertura() == null ? 0.0 : caixa.getValor_abertura();
 		caixa.setValor_abertura(vlbertura);
 
@@ -68,7 +68,7 @@ public class CaixaService {
 		caixa.setUsuario(usuario);
 		caixa.setData_cadastro(java.sql.Date.valueOf(dataAtual));
 
-		// se for BANCO, limpa os valores especiais de agencia e conta
+		// se for BANCO, limpa os valores especiais de agencia e conta.
 		if (caixa.getTipo().equals(CaixaTipo.BANCO)) {
 			System.out.println("agencia " + caixa.getAgencia());
 			System.out.println("conta " + caixa.getConta());
@@ -80,7 +80,7 @@ public class CaixaService {
 			caixas.save(caixa);
 		} catch (Exception e) {
 			e.getStackTrace();
-			throw new RuntimeException("Erro no processo de abertura, chame o suporte técnico");
+			throw new RuntimeException("Erro no Processo de Abertura, chame o suporte técnico.");
 		}
 
 		if (caixa.getValor_abertura() > 0) {
@@ -96,14 +96,13 @@ public class CaixaService {
 
 			} catch (Exception e) {
 				e.getStackTrace();
-				throw new RuntimeException("Erro no processo, chame o suporte");
+				throw new RuntimeException("Erro no Processo, chame o suporte.");
 			}
 		} else {
 			// se não for realizado o lançamento de caixa então joga o valor total do caixa
 			// para 0.0
 			caixa.setValor_total(0.0);
 		}
-
 		return caixa.getCodigo();
 	}
 
@@ -115,7 +114,7 @@ public class CaixaService {
 		BCryptPasswordEncoder decode = new BCryptPasswordEncoder();
 
 		if (senha.equals(""))
-			return "Favor, informe a senha";
+			return "Favor, informe a Senha.";
 
 		if (decode.matches(senha, usuario.getSenha())) {
 
@@ -123,7 +122,7 @@ public class CaixaService {
 			Optional<Caixa> caixaAtual = caixas.findById(caixa);
 
 			if (caixaAtual.map(Caixa::getData_fechamento).isPresent())
-				throw new RuntimeException("Caixa já esta fechado");
+				throw new RuntimeException("Caixa já esta fechado.");
 
 			Double valorTotal = !caixaAtual.map(Caixa::getValor_total).isPresent() ? 0.0
 					: caixaAtual.map(Caixa::getValor_total).get();
@@ -135,13 +134,12 @@ public class CaixaService {
 			try {
 				caixas.save(caixaAtual.get());
 			} catch (Exception e) {
-				throw new RuntimeException("Ocorreu um erro ao fechar o caixa, chame o suporte");
+				throw new RuntimeException("Ocorreu um erro ao Fechar o Caixa, chame o suporte.");
 			}
-
-			return "Caixa fechado com sucesso";
+			return "Caixa fechado com sucesso.";
 
 		} else {
-			return "Senha incorreta, favor verifique";
+			return "Senha incorreta, favor verifique.";
 		}
 	}
 
@@ -160,7 +158,7 @@ public class CaixaService {
 				return caixas.buscaCaixasPorDataAbertura(Date.valueOf(filter.getData_cadastro()));
 			}
 		}
-		
+
 		return caixas.listaCaixasAbertos();
 	}
 
@@ -176,7 +174,7 @@ public class CaixaService {
 		return caixas.findById(codigo);
 	}
 
-	// pega o caixa aberto do usuário informado
+	// pega o caixa aberto do usuário informado.
 	public Optional<Caixa> buscaCaixaUsuario(String usuario) {
 		Usuario usu = usuarios.buscaUsuario(usuario);
 		Optional<Caixa> caixaOptional = Optional.ofNullable(caixas.findByCaixaAbertoUsuario(usu.getCodigo()));
@@ -201,5 +199,4 @@ public class CaixaService {
 
 		return caixas.buscaCaixaTipo(CaixaTipo.BANCO);
 	}
-
 }
