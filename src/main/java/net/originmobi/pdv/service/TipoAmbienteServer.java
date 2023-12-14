@@ -17,5 +17,4 @@ public class TipoAmbienteServer {
 	public List<TipoAmbiente> lista() {
 		return ambientes.findAll();
 	}
-
 }
