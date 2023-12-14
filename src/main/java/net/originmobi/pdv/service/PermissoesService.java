@@ -17,7 +17,7 @@ public class PermissoesService {
 	public List<Permissoes> lista() {
 		return permissoes.findAll();
 	}
-	
+
 	public List<Permissoes> lista(Long codGrupo) {
 		return permissoes.listaPermissoesDoGrupo(codGrupo);
 	}
