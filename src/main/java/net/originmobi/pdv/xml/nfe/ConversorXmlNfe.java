@@ -33,23 +33,23 @@ public class ConversorXmlNfe implements Converter {
 		String cnpjEmissor = notaFiscal.getEmissor().getCnpj().replaceAll("\\D", "");
 		int tipoRegime = notaFiscal.getEmissor().getRegime_tributario().getTipoRegime();
 
-		// gera cNF
+		// gera cNF.
 		int codAleatorio = (int) (10000000 + Math.random() * 89999999);
 
-		// add zeros a esqueda na sequencia
+		// add zeros a esqueda na sequencia.
 		String serie = StringUtils.leftPad(String.valueOf(notaFiscal.getEmissor().getParametro().getSerie_nfe()), 3,
 				"0");
-		// add zeros a esqueda no numero da nota
+		// add zeros a esqueda no numero da nota.
 		String numeroNf = StringUtils.leftPad(String.valueOf(notaFiscal.getNumero()), 9, "0");
 
 		String cNF = String.valueOf(codAleatorio);
 
-		// cria chave acesso
+		// cria chave acesso.
 		String chaveNfe = ufEmissor + "1805" + cnpjEmissor + "55" + serie + numeroNf + 1 + cNF;
 
 		nfService = new NotaFiscalService();
 
-		// gera digito verificador
+		// gera digito verificador.
 		Integer cDV = nfService.geraDV(chaveNfe);
 
 		chaveNfeRetorno = chaveNfe + cDV;
@@ -145,7 +145,7 @@ public class ConversorXmlNfe implements Converter {
 		writer.endNode();
 
 		writer.startNode("indFinal");
-		context.convertAnother(0); // 0 -- normal, 1 -- consumidor final
+		context.convertAnother(0); // 0 -- normal, 1 -- consumidor final.
 		writer.endNode();
 
 		writer.startNode("indPres");
@@ -160,7 +160,7 @@ public class ConversorXmlNfe implements Converter {
 		context.convertAnother("0.0.1");
 		writer.endNode();
 
-		writer.endNode(); // fim nod ide
+		writer.endNode(); // fim nod ide.
 
 		writer.startNode("emit");
 
@@ -239,7 +239,7 @@ public class ConversorXmlNfe implements Converter {
 
 		writer.startNode("xNome");
 		if (notaFiscal.getEmissor().getParametro().getAmbiente() == 2)
-			context.convertAnother("NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL");
+			context.convertAnother("NF-E EMITIDA EM AMBIENTE DE HOMOLOGACAO - SEM VALOR FISCAL.");
 		else
 			context.convertAnother(notaFiscal.getDestinatario().getNome());
 		writer.endNode();
@@ -300,7 +300,7 @@ public class ConversorXmlNfe implements Converter {
 		// writer.startNode("IE");
 		// writer.endNode(); // fim nod <IE>
 
-		writer.endNode(); // fim nod <dest>
+		writer.endNode(); // fim nod <dest>.
 
 		for (int i = 0; i < notaFiscal.getItens().size(); i++) {
 			writer.startNode("det");
@@ -364,7 +364,7 @@ public class ConversorXmlNfe implements Converter {
 			context.convertAnother(1);
 			writer.endNode();
 
-			writer.endNode(); // fim nod<prod>
+			writer.endNode(); // fim nod<prod>.
 
 			writer.startNode("imposto");
 
@@ -421,9 +421,9 @@ public class ConversorXmlNfe implements Converter {
 				writer.endNode();
 			}
 
-			writer.endNode(); // fim nod ICMS + CST
+			writer.endNode(); // fim nod ICMS + CST.
 
-			writer.endNode(); // fim nod ICMS
+			writer.endNode(); // fim nod ICMS.
 
 			writer.startNode("PIS");
 
@@ -448,9 +448,9 @@ public class ConversorXmlNfe implements Converter {
 					formato.format(notaFiscal.getItens().get(i).getImpostos().getV_pis()).replace(",", "."));
 			writer.endNode();
 
-			writer.endNode(); // fim nod PISAliq
+			writer.endNode(); // fim nod PISAliq.
 
-			writer.endNode(); // fim nod PIS
+			writer.endNode(); // fim nod PIS.
 
 			writer.startNode("COFINS");
 
@@ -475,14 +475,14 @@ public class ConversorXmlNfe implements Converter {
 					formato.format(notaFiscal.getItens().get(i).getImpostos().getV_cofins()).replace(",", "."));
 			writer.endNode();
 
-			writer.endNode(); // fim nod COFINS
+			writer.endNode(); // fim nod COFINS.
 
-			writer.endNode(); // fim nod COFINSAliq
+			writer.endNode(); // fim nod COFINSAliq.
 
-			writer.endNode(); // fim nod imposto
+			writer.endNode(); // fim nod imposto.
 
-			writer.endNode(); // fim nod <det>
-		} // fim for dos itens
+			writer.endNode(); // fim nod <det>.
+		} // fim for dos itens.
 
 		writer.startNode("total");
 
@@ -553,9 +553,9 @@ public class ConversorXmlNfe implements Converter {
 		context.convertAnother(formato.format(notaFiscal.getTotais().getV_nf()).replaceAll(",", "."));
 		writer.endNode();
 
-		writer.endNode(); // fim nod ICMSTot
+		writer.endNode(); // fim nod ICMSTot.
 
-		writer.endNode(); // fim nod total
+		writer.endNode(); // fim nod total.
 
 		writer.startNode("transp");
 
@@ -563,12 +563,11 @@ public class ConversorXmlNfe implements Converter {
 		context.convertAnother(notaFiscal.getFreteTipo().getTipo());
 		writer.endNode();
 
-		writer.endNode(); // fim nod transp
+		writer.endNode(); // fim nod transp.
 
-		writer.endNode(); // fim nod <infNFe>
+		writer.endNode(); // fim nod <infNFe>.
 
-		writer.endNode(); // fim nod NFe
-
+		writer.endNode(); // fim nod NFe.
 	}
 
 	public String retornaChaveNfe() {
@@ -579,5 +578,4 @@ public class ConversorXmlNfe implements Converter {
 	public Object unmarshal(HierarchicalStreamReader reader, UnmarshallingContext context) {
 		return null;
 	}
-
 }
