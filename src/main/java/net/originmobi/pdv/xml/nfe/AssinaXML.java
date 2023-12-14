@@ -173,5 +173,4 @@ public class AssinaXML {
 		}
 		return xml;
 	}
-
 }
