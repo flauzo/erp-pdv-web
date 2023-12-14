@@ -21,5 +21,4 @@ public class Aplicacao {
 	public String getUsuarioAtual() {
 		return usuarioAtual;
 	}
-	
 }
