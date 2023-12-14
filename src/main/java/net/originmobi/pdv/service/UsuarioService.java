@@ -43,15 +43,15 @@ public class UsuarioService {
 			if (usuarioExiste != null) {
 				return mensagem = "Usuário já existe";
 			} else if (pessoaUsuario != null) {
-				return mensagem = "Pessoa já vinculada a outro usuário";
+				return mensagem = "Pessoa já vinculada a outro usuário.";
 			} else {
 				usuarios.save(usuario);
-				mensagem = "Usuário salvo com sucesso";
+				mensagem = "Usuário salvo com sucesso.";
 			}
 		} else {
 			try {
 				usuarios.save(usuario);
-				mensagem = "Usuário atualizado com sucesso";
+				mensagem = "Usuário atualizado com sucesso.";
 			} catch (Exception e) {
 				mensagem = e.getMessage();
 				e.getStackTrace();
@@ -75,7 +75,7 @@ public class UsuarioService {
 		if (!usuario.getGrupoUsuario().contains(gruposUsu)) {
 			usuario.getGrupoUsuario().add(gruposUsu);
 		} else {
-			return "ja existe";
+			return "ja existe.";
 		}
 
 		usuarios.save(usuario);
@@ -109,5 +109,4 @@ public class UsuarioService {
 	public Usuario buscaUsuario(String username) {
 		return usuarios.findByUserEquals(username);
 	}
-	
 }
