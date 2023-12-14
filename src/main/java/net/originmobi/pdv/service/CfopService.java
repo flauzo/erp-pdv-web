@@ -17,5 +17,4 @@ public class CfopService {
 	public List<CFOP> lista() {
 		return cfops.findAll();
 	}
-
 }
