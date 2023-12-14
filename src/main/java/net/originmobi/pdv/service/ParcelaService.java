@@ -49,7 +49,7 @@ public class ParcelaService {
 		Optional<Parcela> parcelaAtual = parcelas.findById(parcela);
 
 		if (parcelaAtual.map(Parcela::getQuitado).get().equals(1))
-			return "Parcela " + parcela + " já esta quitada";
+			return "Parcela " + parcela + " já esta quitada.";
 
 		DecimalFormat df = new DecimalFormat("#.00");
 
@@ -71,5 +71,4 @@ public class ParcelaService {
 
 		return "ok";
 	}
-
 }
