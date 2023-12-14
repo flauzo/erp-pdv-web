@@ -48,5 +48,4 @@ public class VendaProdutoService {
 	public List<Object[]> buscaQtdProduto(Long codvenda) {
 		return vendaProdutos.buscaQtdProduto(codvenda);
 	}
-
 }
