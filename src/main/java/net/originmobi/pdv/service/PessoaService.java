@@ -63,10 +63,10 @@ public class PessoaService {
 			throws ParseException {
 
 		if (codpessoa == 0 && pessoas.findByCpfcnpjContaining(cpfcnpj) != null) {
-			throw new RuntimeException("Já existe uma pessoa cadastrada com este CPF/CNPJ, verifique");
+			throw new RuntimeException("Já existe uma pessoa cadastrada com este CPF/CNPJ, verifique.");
 		}
 
-		// Endereço
+		// Endereço.
 		Optional<Cidade> cidade = cidades.busca(codcidade);
 
 		Endereco endereco = new Endereco();
@@ -82,12 +82,12 @@ public class PessoaService {
 
 		Endereco ende = enderecos.cadastrar(endereco);
 
-		// Telefone
+		// Telefone.
 		Telefone telefone = new Telefone();
 		if (codfone != 0)
 
 			telefone.setCodigo(codfone);
-		telefone.setFone(fone);
+			telefone.setFone(fone);
 
 		TelefoneTipo tipoFone = tipo.equals(TelefoneTipo.FIXO.toString()) ? TelefoneTipo.FIXO : TelefoneTipo.CELULAR;
 		telefone.setTipo(tipoFone);
@@ -95,7 +95,7 @@ public class PessoaService {
 		List<Telefone> fones = new ArrayList<>();
 		fones.add(telefones.cadastrar(telefone));
 
-		// Pessoa
+		// Pessoa.
 		Pessoa pessoa = new Pessoa();
 		if (codpessoa != 0)
 			pessoa.setCodigo(codpessoa);
@@ -110,10 +110,10 @@ public class PessoaService {
 		pessoa.setObservacao(observacao);
 		pessoa.setData_cadastro(Date.valueOf(dataAtual));
 
-		// Vincula endereço
+		// Vincula endereço.
 		pessoa.setEndereco(ende);
 
-		// Vincula telefone
+		// Vincula telefone.
 		pessoa.setTelefone(fones);
 
 		try {
@@ -122,7 +122,6 @@ public class PessoaService {
 			throw new RuntimeException("Erro ao tentar cadastrar pessoa, chame o suporte");
 		}
 
-		return "Pessoa salva com sucesso";
+		return "Pessoa salva com sucesso.";
 	}
-
 }
