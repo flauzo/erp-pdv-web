@@ -35,5 +35,4 @@ public class DataAtual {
 		Timestamp dataAtual = new Timestamp(System.currentTimeMillis());
 		return dataAtual;
 	}
-
 }
