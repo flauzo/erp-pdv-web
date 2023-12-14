@@ -17,5 +17,4 @@ public class CstService {
 	public List<Cst> lista() {
 		return csts.findAll();
 	}
-
 }
