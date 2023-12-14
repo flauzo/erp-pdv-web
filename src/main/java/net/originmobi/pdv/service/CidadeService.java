@@ -22,5 +22,4 @@ public class CidadeService {
 	public Optional<Cidade> busca(Long codcidade) {
 		return cidades.findById(codcidade);
 	}
-
 }
