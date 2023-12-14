@@ -8,5 +8,4 @@ public class TesteAssinatura {
 		AssinaXML assinatura = new AssinaXML();
 		assinatura.assinaXML(chaveAcesso);
 	}
-
 }
