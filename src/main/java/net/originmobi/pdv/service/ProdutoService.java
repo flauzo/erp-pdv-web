@@ -60,7 +60,7 @@ public class ProdutoService {
 						ncm, cest, tributacao, modbc, vendavel);
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
-				return "Erro a cadastrar produto, chame o suporte";
+				return "Erro a cadastrar Produto, chame o suporte.";
 			}
 		} else {
 
@@ -69,15 +69,14 @@ public class ProdutoService {
 						dataValidade, controleEstoque, situacao, unitario, subtribu.ordinal(), ncm, cest, tributacao,
 						modbc, vendavel);
 
-				return "Produto atualizado com sucesso";
+				return "Produto atualizado com sucesso.";
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
-				return "Erro a atualizar produto, chame o suporte";
+				return "Erro a atualizar Produto, chame o suporte.";
 			}
-
 		}
 
-		return "Produdo cadastrado com sucesso";
+		return "Produdo cadastrado com sucesso.";
 	}
 
 	@SuppressWarnings("static-access")
@@ -92,7 +91,7 @@ public class ProdutoService {
 
 			if (produto.getControla_estoque().equals(ProdutoControleEstoque.SIM)) {
 
-				// estoque atual do produto
+				// estoque atual do produto.
 				int qtd_estoque = produtos.saldoEstoque(codprod);
 				String origem_operacao = "Venda " + codvenda.toString();
 
@@ -101,23 +100,21 @@ public class ProdutoService {
 							Date.valueOf(dataAtual));
 				} else {
 					throw new RuntimeException(
-							"O produto de código " + codprod + " não tem estoque suficiente, verifique");
+							"O produto de código " + codprod + " não tem estoque suficiente, verifique.");
 				}
 			} else {
-				System.out.println("Produto não controla estoque");
+				System.out.println("Produto não controla estoque.");
 			}
 		}
-
 	}
 	
 	public void ajusteEstoque(Long codprod, int qtd, EntradaSaida tipo, String origem_operacao, Date data_movimentacao) {
 		Produto produto = produtos.findByCodigoIn(codprod);
 		
 		if (produto.getControla_estoque().equals(ProdutoControleEstoque.NAO))
-			throw new RuntimeException("O produto de código " + codprod + " não controla estoque, verifique");
+			throw new RuntimeException("O produto de código " + codprod + " não controla estoque, verifique.");
 		
 		produtos.movimentaEstoque(codprod, tipo.toString(), qtd, origem_operacao, data_movimentacao);
-		
-	}
 
+	}
 }
