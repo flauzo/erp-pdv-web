@@ -30,7 +30,6 @@ public class EnderecoService {
 		} catch (Exception e) {
 			e.getStackTrace();
 		}
-
 		return endereco;
 	}
 
