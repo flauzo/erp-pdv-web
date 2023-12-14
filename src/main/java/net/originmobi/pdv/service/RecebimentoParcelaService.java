@@ -22,5 +22,4 @@ public class RecebimentoParcelaService {
 	public List<Parcela> parcelasDoReceber(Long recebimento) {
 		return recebimentoparcelas.parcelasDoRecebimento(recebimento);
 	}
-
 }
