@@ -45,5 +45,4 @@ public class TributacaoService {
 	public List<Tributacao> lista() {
 		return tributacoes.findAll();
 	}
-
 }
