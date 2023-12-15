@@ -18,7 +18,7 @@ public interface VendaProdutosRepository extends JpaRepository<VendaProduto, Lon
 	/*
 	 * Esta query define os dados de apresentação dos produtos da tela de venda,
 	 * ao mexer na ordem do dados, tem que alterar na tela tabProdutos.html da
-	 * venda
+	 * venda.
 	 */
 	@Query(value = "select p.codigo as cod_prod, p.descricao, p.valor_venda, vp.codigo, p.balanca, vp.valor_balanca from produto p, venda_produtos vp "
 			+ "where p.codigo = vp.produto_codigo and vp.venda_codigo = ?1", nativeQuery = true)
