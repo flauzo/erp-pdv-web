@@ -13,5 +13,4 @@ public interface NotaFiscalTotaisRepository extends JpaRepository<NotaFiscalTota
 			+ "where nfii.codigo = nfi.imposto_codigo "
 			+ "and nfi.nota_fiscal_codigo = ?1", nativeQuery = true)
 	String calcula(Long codNota);
-
 }
