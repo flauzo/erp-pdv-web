@@ -17,5 +17,4 @@ public class FreteTipoService {
 	public List<FreteTipo> lista() {
 		return repository.findAll();
 	}
-
 }
