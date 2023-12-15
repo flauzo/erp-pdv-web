@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import net.originmobi.pdv.model.AjusteProduto;
 
+
 public interface AjusteProdutoRepository extends JpaRepository<AjusteProduto, Long> {
 
 	List<AjusteProduto> findByAjusteCodigoEquals(Long codAjuste);
