@@ -13,9 +13,7 @@ import org.springframework.format.annotation.NumberFormat;
 
 /**
  * 
- * @author joaotux
- * 
- *         Responsavél por mapear a tebela venda_produtos
+ *         Mapear a tebela venda_produtos.
  */
 
 @Entity
@@ -79,5 +77,4 @@ public class VendaProduto implements Serializable {
 	public void setValor_balanca(Double valor_balanca) {
 		this.valor_balanca = valor_balanca;
 	}
-
 }
