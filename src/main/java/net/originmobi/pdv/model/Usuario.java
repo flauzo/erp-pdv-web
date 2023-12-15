@@ -25,10 +25,10 @@ public class Usuario implements Serializable {
 	private Long codigo;
 
 	@NotBlank(message = "Usuário não pode ser vazio")
-	@Size(min = 3, max = 20, message = "Tamanha minimo de 4 caracteres e máximo de 20 para usuario")
+	@Size(min = 3, max = 20, message = "Tamanha minimo de 4 caracteres e máximo de 20 para usuario.")
 	private String user;
 
-	@NotBlank(message = "Senha não pode ser vazia")
+	@NotBlank(message = "Senha não pode ser vazia.")
 	private String senha;
 	private Date data_cadastro;
 
@@ -111,5 +111,4 @@ public class Usuario implements Serializable {
 	public void setPermissoes(List<Permissoes> permissoes) {
 		this.permissoes = permissoes;
 	}
-
 }
