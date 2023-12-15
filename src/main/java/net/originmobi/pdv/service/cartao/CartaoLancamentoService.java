@@ -54,7 +54,7 @@ public class CartaoLancamentoService {
 		CartaoTipo tipo = null;
 		int dias = 0;
 
-		// verifica se é debito ou crédito e pega os valores corretos do titulo
+		// verifica se é Debito ou Crédito e pega os valores corretos do titulo.
 		if (titulo.get().getTipo().getSigla().equals(TituloTipo.CARTDEB.toString())) {
 			taxa = titulo.get().getMaquina().getTaxa_debito();
 			dias = titulo.get().getMaquina().getDias_debito();
@@ -88,7 +88,6 @@ public class CartaoLancamentoService {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-
 	}
 
 	public List<CartaoLancamento> listar(CartaoFilter filter) {
@@ -122,16 +121,16 @@ public class CartaoLancamentoService {
 		try {
 			caixaLancamentos.lancamento(lancamento);
 		} catch (Exception e) {
-			throw new RuntimeException("Erro ao tentar realizar o processamento, chame o suporte");
+			throw new RuntimeException("Erro ao tentar realizar o Processamento, chame o suporte.");
 		}
 
 		try {
 			cartaoLancamento.setSituacao(CartaoSituacao.PROCESSADO);
 		} catch (Exception e) {
-			throw new RuntimeException("Erro ao tentar realizar o processamento, chame o suporte");
+			throw new RuntimeException("Erro ao tentar realizar o Processamento, chame o suporte.");
 		}
 
-		return "Processamento realizado com sucesso";
+		return "Processamento realizado com sucesso>";
 	}
 
 	public String antecipar(CartaoLancamento cartaoLancamento) {
@@ -150,23 +149,22 @@ public class CartaoLancamentoService {
 		Usuario usuario = usuarios.buscaUsuario(aplicacao.getUsuarioAtual());
 
 		CaixaLancamento lancamento = new CaixaLancamento(
-				"Referênte a antecipação de cartão código " + cartaoLancamento.getCodigo(), valor, tipo, estilo, banco,
+				"Referênte a Antecipação de Cartão código " + cartaoLancamento.getCodigo(), valor, tipo, estilo, banco,
 				usuario);
 
 		try {
 			caixaLancamentos.lancamento(lancamento);
 		} catch (Exception e) {
-			throw new RuntimeException("Erro ao tentar realizar a antecipação, chame o suporte");
+			throw new RuntimeException("Erro ao tentar realizar a Antecipação, chame o suporte.");
 		}
 
 		try {
 			cartaoLancamento.setSituacao(CartaoSituacao.ANTECIPADO);
 			repository.save(cartaoLancamento);
 		} catch (Exception e) {
-			throw new RuntimeException("Erro ao tentar realizar a antecipação, chame o suporte");
+			throw new RuntimeException("Erro ao tentar realizar a Antecipação, chame o suporte.");
 		}
 
-		return "Antecipação realizada com sucesso";
+		return "Antecipação realizada com sucesso.";
 	}
-
 }
