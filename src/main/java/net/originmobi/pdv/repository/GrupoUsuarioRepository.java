@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import net.originmobi.pdv.model.GrupoUsuario;
 import net.originmobi.pdv.model.Usuario;
 
+
 public interface GrupoUsuarioRepository extends JpaRepository<GrupoUsuario, Long> {
 
 	public List<GrupoUsuario> findByUsuarioIn(Usuario usuario);
