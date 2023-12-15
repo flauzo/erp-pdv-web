@@ -19,7 +19,7 @@ public class TituloTipo implements Serializable {
 	private Long codigo;
 
 	@NotNull
-	@Size(max = 100, min = 4, message = "A descrição deve ter no minimo 4 caracteres e no máximo 100")
+	@Size(max = 100, min = 4, message = "A descrição deve ter no Minimo 4 caracteres e no máximo 100.")
 	private String descricao;
 	private String sigla;
 
@@ -46,5 +46,4 @@ public class TituloTipo implements Serializable {
 	public void setSigla(String sigla) {
 		this.sigla = sigla;
 	}
-
 }
