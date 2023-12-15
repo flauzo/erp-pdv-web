@@ -58,5 +58,4 @@ public class LoginUserDatailsService implements UserDetailsService {
 		}
 		return auths;
 	}
-
 }
