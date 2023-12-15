@@ -52,4 +52,5 @@ public interface VendaRepository extends JpaRepository<Venda, Long> {
 
 	@Query("select count(*) from Venda where data_finalizado is null")
 	public int qtdVendasEmAberto();
+
 }
