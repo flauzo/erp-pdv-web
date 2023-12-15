@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import net.originmobi.pdv.model.Pagar;
 import net.originmobi.pdv.model.PagarParcela;
 
+
 public interface PagarParcelaRespository extends JpaRepository<PagarParcela, Long> {
 
 	@Transactional
