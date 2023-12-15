@@ -12,6 +12,7 @@ import org.springframework.data.repository.query.Param;
 
 import net.originmobi.pdv.model.Receber;
 
+
 public interface ReceberRepository extends JpaRepository<Receber, Long> {
 
 	@Transactional
