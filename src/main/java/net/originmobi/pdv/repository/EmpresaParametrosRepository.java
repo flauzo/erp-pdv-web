@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import net.originmobi.pdv.model.EmpresaParametro;
 
+
 public interface EmpresaParametrosRepository extends JpaRepository<EmpresaParametro, Long> {
 
 	@Transactional
@@ -15,5 +16,4 @@ public interface EmpresaParametrosRepository extends JpaRepository<EmpresaParame
 	@Query(value = "update empresa_parametros set serie_nfe = :serie, tipo_ambiente_codigo = :ambiente, p_credsn = :aliqCalcCredito", nativeQuery = true)
 	void update(@Param("serie") int serie, @Param("ambiente") int ambiente,
 			@Param("aliqCalcCredito") Double aliqCalcCredito);
-
 }
