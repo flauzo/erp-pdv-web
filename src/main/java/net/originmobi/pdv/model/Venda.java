@@ -203,5 +203,4 @@ public class Venda implements Serializable {
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
 	}
-
 }
