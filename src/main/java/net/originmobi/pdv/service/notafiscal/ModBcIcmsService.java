@@ -17,5 +17,4 @@ public class ModBcIcmsService {
 	public List<ModBcIcms> lista() {
 		return repository.findAll();
 	}
-
 }
