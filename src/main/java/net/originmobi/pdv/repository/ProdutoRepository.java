@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import net.originmobi.pdv.model.Produto;
 
+
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
 	public Page<Produto> findByDescricaoContaining(String descricao, Pageable pageable);
