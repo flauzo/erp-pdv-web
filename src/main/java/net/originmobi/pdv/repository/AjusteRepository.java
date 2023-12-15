@@ -15,5 +15,4 @@ public interface AjusteRepository extends JpaRepository<Ajuste, Long> {
 
 	@Query("select a from Ajuste a where codigo = :codigo")
 	Page<Ajuste> lista(@Param("codigo") Long codigo, Pageable pageable);
-	
 }
