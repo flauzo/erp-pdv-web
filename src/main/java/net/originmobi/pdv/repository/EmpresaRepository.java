@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import net.originmobi.pdv.model.Empresa;
 
+
 public interface EmpresaRepository extends JpaRepository<Empresa, Long> {
 
 	@Query(value = "select * from empresa", nativeQuery = true)
@@ -21,5 +22,4 @@ public interface EmpresaRepository extends JpaRepository<Empresa, Long> {
 			+ "where codigo = :codigo", nativeQuery = true)
 	void update(@Param("codigo") Long codigo, @Param("nome") String nome, @Param("nome_fantasia") String nome_fantasia,
 			@Param("cnpj") String cnpj, @Param("ie") String ie, @Param("regime") Long codRegime);
-
 }
