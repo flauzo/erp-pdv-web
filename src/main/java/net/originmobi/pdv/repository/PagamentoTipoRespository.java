@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import net.originmobi.pdv.model.PagamentoTipo;
 
+
 public interface PagamentoTipoRespository extends JpaRepository<PagamentoTipo, Long> {
 
 	public PagamentoTipo findByCodigoIn(Long codigo);
