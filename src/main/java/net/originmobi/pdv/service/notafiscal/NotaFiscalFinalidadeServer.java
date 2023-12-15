@@ -17,5 +17,4 @@ public class NotaFiscalFinalidadeServer {
 	public List<NotaFiscalFinalidade> lista() {
 		return repository.findAll();
 	}
-
 }
