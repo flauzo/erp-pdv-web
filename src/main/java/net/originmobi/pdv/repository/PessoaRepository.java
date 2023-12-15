@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import net.originmobi.pdv.model.Pessoa;
 
+
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 
 	public Pessoa findByCpfcnpjContaining(String cpfcnpj);
