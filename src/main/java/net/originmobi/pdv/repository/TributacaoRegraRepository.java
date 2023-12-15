@@ -36,5 +36,4 @@ public interface TributacaoRegraRepository extends JpaRepository<TributacaoRegra
 			@Param("uf") String uf, @Param("cfop") String cfop, @Param("cstcsosn") String cst_csosn,
 			@Param("cstpis") String cstpis, @Param("cstcofins") String cstcofins, @Param("pis") String pis,
 			@Param("cofins") String cofins, @Param("aliq_ipi") String aliq_ipi, @Param("aliq_icms") String aliq_icms, @Param("cst_ipi") String cst_ipi);
-
 }
