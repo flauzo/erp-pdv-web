@@ -11,6 +11,7 @@ import org.springframework.data.repository.query.Param;
 import net.originmobi.pdv.enumerado.caixa.CaixaTipo;
 import net.originmobi.pdv.model.Caixa;
 
+
 public interface CaixaRepository extends JpaRepository<Caixa, Long> {
 
 	@Query("select c from Caixa c order by 1 desc")
@@ -41,5 +42,4 @@ public interface CaixaRepository extends JpaRepository<Caixa, Long> {
 
 	@Query("select c from Caixa c where c.tipo = :tipo and c.data_cadastro = :data_cadastro order by c.codigo desc")
 	public List<Caixa> buscaCaixaTipoData(@Param("tipo") CaixaTipo tipo, @Param("data_cadastro") Date data_cadastro);
-
 }
