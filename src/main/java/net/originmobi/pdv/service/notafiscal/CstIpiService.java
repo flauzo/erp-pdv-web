@@ -17,5 +17,4 @@ public class CstIpiService {
 	public List<CstIPI> lista() {
 		return repository.findAll();
 	}
-
 }
