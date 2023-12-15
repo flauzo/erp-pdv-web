@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/venda/relatorio")
+
 public class VendaRelatorioController {
 	
 	GerarRelatorio relatorio;
