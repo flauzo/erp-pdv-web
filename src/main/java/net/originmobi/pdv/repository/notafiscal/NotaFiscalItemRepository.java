@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import net.originmobi.pdv.model.NotaFiscalItem;
 
+
 public interface NotaFiscalItemRepository extends JpaRepository<NotaFiscalItem, Long> {
 
 	@Query(value = "select nfi.cod_prod, prod.descricao, prod.ncm, nfii.cst, nfi.cfop, prod.unidade, nfi.qtd qtd, format(prod.valor_venda, 2, 'de_DE'), "
