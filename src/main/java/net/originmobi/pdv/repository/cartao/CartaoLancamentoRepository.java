@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import net.originmobi.pdv.model.cartao.CartaoLancamento;
 
+
 public interface CartaoLancamentoRepository extends JpaRepository<CartaoLancamento, Long> {
 	
 	@Query(value = "select cl.* from cartao_lancamento cl where cl.situacao like :situacao and cl.tipo like :tipo and cl.data_recebimento like :data_recebimento", nativeQuery = true)
