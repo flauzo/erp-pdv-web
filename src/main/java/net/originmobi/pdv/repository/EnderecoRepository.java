@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import net.originmobi.pdv.model.Endereco;
 
+
 public interface EnderecoRepository extends JpaRepository<Endereco, Long> {
 
 	public Endereco findByCodigoIn(Long codigo);
@@ -18,5 +19,4 @@ public interface EnderecoRepository extends JpaRepository<Endereco, Long> {
 			+ "referencia = :referencia where codigo = :codigo", nativeQuery = true)
 	public void update(@Param("codigo") Long codigo, @Param("cidade") Long codcidade, @Param("rua") String rua, @Param("bairro") String bairro,
 			@Param("numero") String numero, @Param("cep") String cep, @Param("referencia") String referencia);
-
 }
