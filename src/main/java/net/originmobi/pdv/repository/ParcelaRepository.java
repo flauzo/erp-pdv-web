@@ -16,6 +16,7 @@ import org.springframework.data.repository.query.Param;
 import net.originmobi.pdv.model.Parcela;
 import net.originmobi.pdv.model.Receber;
 
+
 public interface ParcelaRepository extends JpaRepository<Parcela, Long> {
 
 	@Transactional
