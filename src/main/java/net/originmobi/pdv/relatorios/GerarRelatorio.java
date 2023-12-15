@@ -25,7 +25,7 @@ public class GerarRelatorio {
 			contexto = new File(".").getCanonicalPath();
 		} catch (IOException e1) {
 			e1.printStackTrace();
-			System.out.println("Erro ao pegar path da aplicação");
+			System.out.println("Erro ao pegar Path da aplicação.");
 		}
 
 		String jrxml = contexto.toString().replace("/bin", "") + "/webapps/pdv/WEB-INF/classes/relatorios/" + relatorio;
@@ -58,6 +58,5 @@ public class GerarRelatorio {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-
 	}
 }
