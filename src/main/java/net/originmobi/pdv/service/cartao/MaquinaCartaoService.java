@@ -30,8 +30,7 @@ public class MaquinaCartaoService {
 		try {
 			maquinas.deleteById(codigo);
 		} catch (Exception e) {
-			throw new RuntimeException("Erro ao tentar remover a máquina, chame o suporte");
+			throw new RuntimeException("Erro ao tentar Remover a Máquina, chame o suporte.");
 		}
 	}
-
 }
