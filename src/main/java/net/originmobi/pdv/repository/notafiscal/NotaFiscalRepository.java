@@ -32,5 +32,4 @@ public interface NotaFiscalRepository extends JpaRepository<NotaFiscal, Long> {
 	
 	@Query(value = "select count(*) from nota_fiscal", nativeQuery = true)
 	int totalNotaFiscalEmitidas();
-
 }
