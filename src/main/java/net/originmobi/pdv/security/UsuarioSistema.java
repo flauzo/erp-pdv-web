@@ -26,5 +26,4 @@ public class UsuarioSistema extends User implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 }
