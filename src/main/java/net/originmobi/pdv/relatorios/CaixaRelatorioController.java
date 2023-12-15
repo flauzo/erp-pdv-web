@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/caixa/relatorio")
+
 public class CaixaRelatorioController {
 	
 	private GerarRelatorio relatorio;
