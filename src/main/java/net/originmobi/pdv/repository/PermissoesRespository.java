@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import net.originmobi.pdv.model.GrupoUsuario;
 import net.originmobi.pdv.model.Permissoes;
 
+
 public interface PermissoesRespository extends JpaRepository<Permissoes, Long> {
 
 	public List<Permissoes> findByGrupoUsuarioIn(GrupoUsuario grupoUsuario);
