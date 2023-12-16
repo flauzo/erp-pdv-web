@@ -35,7 +35,6 @@ $(document).ready(
 								$(".carrega").html(
 								"<p class='carregando'></p>");
 							},
-							
 
 							success : function(e) {
 								$(".carrega").empty();
