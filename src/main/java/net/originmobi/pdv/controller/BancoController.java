@@ -26,5 +26,4 @@ public class BancoController {
 		mv.addObject("bancos", caixas.listaBancosAbertosTipoFilterBanco(CaixaTipo.BANCO, filter));
 		return mv;
 	}
-
 }
