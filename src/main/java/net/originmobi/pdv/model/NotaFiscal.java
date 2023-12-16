@@ -48,7 +48,7 @@ public class NotaFiscal implements Serializable {
 	@Column(name = "cdv")
 	private Long dv;
 
-	// valor 0 - emissão de nfe com aplicativo do contribuinte
+	// valor 0 - emissão de nfe com aplicativo do contribuinte.
 	@Column(name = "procemi")
 	private int procEmis;
 
@@ -307,5 +307,4 @@ public class NotaFiscal implements Serializable {
 	public void setTipo_ambiente(int tipo_ambiente) {
 		this.tipo_ambiente = tipo_ambiente;
 	}
-
 }
