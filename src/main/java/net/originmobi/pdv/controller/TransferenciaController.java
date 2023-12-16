@@ -26,7 +26,5 @@ public class TransferenciaController {
 		String obs = request.get("obs");
 		
 		return transferencias.cadastrar(valor, origem, destino, obs);
-		
 	}
-	
 }
