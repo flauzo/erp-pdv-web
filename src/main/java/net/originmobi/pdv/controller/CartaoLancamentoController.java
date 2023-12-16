@@ -19,6 +19,7 @@ import net.originmobi.pdv.filter.CartaoFilter;
 import net.originmobi.pdv.model.cartao.CartaoLancamento;
 import net.originmobi.pdv.service.cartao.CartaoLancamentoService;
 
+
 @Controller
 @RequestMapping("/cartaolancamentos")
 public class CartaoLancamentoController {
