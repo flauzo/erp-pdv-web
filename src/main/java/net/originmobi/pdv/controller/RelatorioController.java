@@ -22,8 +22,6 @@ public class RelatorioController {
 		parametros.put("codvenda", 1);
 		
 		relatorio.gerar("comanda.jrxml", response, parametros);
-		
 		return "relatorio";
 	}
-
 }
