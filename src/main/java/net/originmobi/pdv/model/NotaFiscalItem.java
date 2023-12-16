@@ -147,5 +147,4 @@ public class NotaFiscalItem implements Serializable {
 	public void setCfop(String cfop) {
 		this.cfop = cfop;
 	}
-
 }
