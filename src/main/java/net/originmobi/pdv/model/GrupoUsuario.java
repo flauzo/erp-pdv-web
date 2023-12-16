@@ -24,12 +24,12 @@ public class GrupoUsuario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@NotBlank(message = "Nome não pode ser em branco")
-	@Size(min = 4, max = 45, message = "Tamanho minio de quatro caracteres")
+	@NotBlank(message = "Nome não pode ser em branco.")
+	@Size(min = 4, max = 45, message = "Tamanho minio de quatro caracteres.")
 	private String nome;
 
-	@NotBlank(message = "Descrição não pode ser em branco")
-	@Size(min = 4, max = 45, message = "Tamanho minio de quatro caracteres")
+	@NotBlank(message = "Descrição não pode ser em branco.")
+	@Size(min = 4, max = 45, message = "Tamanho minio de quatro caracteres.")
 	private String descricao;
 
 	@ManyToMany(cascade = CascadeType.MERGE)
@@ -90,5 +90,4 @@ public class GrupoUsuario implements Serializable {
 	public void setPermissoes(List<Permissoes> permissoes) {
 		this.permissoes = permissoes;
 	}
-
 }
