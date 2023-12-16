@@ -51,7 +51,7 @@ public class GrupoController {
 		
 		try {
 			grupos.cadastrar(grupo);
-			attributes.addFlashAttribute("mensagem", "Grupo salvo com sucesso");
+			attributes.addFlashAttribute("mensagem", "Grupo salvo com sucesso.");
 		} catch (Exception e) {
 			System.out.println("Erro ao cadastrar Grupo " + e);
 		}
