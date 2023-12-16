@@ -89,14 +89,14 @@ public class TributacaoController {
 		
 		try {
 			codTributacao = tributacoes.cadastro(tributacao);
-			attributes.addFlashAttribute("mensagem", "Tributação cadastrada com sucesso");
+			attributes.addFlashAttribute("mensagem", "Tributação cadastrada com sucesso.");
 		} catch (Exception e) {
-			attributes.addFlashAttribute("mensagem", "Erro ao tentar cadastrada tributação, chame o suporte");
+			attributes.addFlashAttribute("mensagem", "Erro ao tentar cadastrada Tributação, chame o suporte.");
 			System.out.println(e.getStackTrace());
 		}
 
 		if (codTributacao.equals("sem empresa")) {
-			attributes.addFlashAttribute("mensagemErro", "Nenhuma empresa cadastrada, verifique");
+			attributes.addFlashAttribute("mensagemErro", "Nenhuma empresa cadastrada, verifique.");
 			attributes.addFlashAttribute("mensagem", "");
 			return "redirect:/tributacao/form";
 		}
