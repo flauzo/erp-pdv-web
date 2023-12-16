@@ -71,5 +71,4 @@ public class RecebimentoController {
 	public List<Titulo> titulos() {
 		return titulos.lista();
 	}
-	
 }
