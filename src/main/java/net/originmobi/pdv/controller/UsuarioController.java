@@ -115,5 +115,4 @@ public class UsuarioController {
 	public List<GrupoUsuario> todosGrupos() {
 		return gruposUsuario.lista();
 	}
-
 }
