@@ -16,6 +16,7 @@ import javax.persistence.ManyToOne;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
+
 @Entity
 public class Recebimento implements Serializable {
 
