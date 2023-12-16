@@ -57,7 +57,7 @@ public class MaquinaCartaoController {
 			return MAQUINA_FORM;
 
 		maquinas.cadastrar(maquina);
-		attributes.addFlashAttribute("mensagem", "Máquina salva com sucesso");
+		attributes.addFlashAttribute("mensagem", "Máquina salva com sucesso.");
 
 		return "redirect:/maquinacartao/form";
 	}
@@ -73,7 +73,7 @@ public class MaquinaCartaoController {
 	public @ResponseBody String editar(@PathVariable("codigo") Long codigo) {
 		maquinas.remove(codigo);
 
-		return "Máquina removida com sucesso";
+		return "Máquina removida com sucesso.";
 	}
 	
 	@RequestMapping(value = "listaJson", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
