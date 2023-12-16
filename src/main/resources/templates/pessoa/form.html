@@ -19,7 +19,7 @@
 					class="fa fa-list fa-lg"> Listar</span> </a>
 			</div>
 			
-			<!-- USO PARA PEGAR O LINK DA PESSOA NO AJAX -->
+			<!-- USO PARA PEGAR O LINK DA PESSOA NO AJAX. -->
 			<a th:href="@{/pessoa}" id="link_pessoa"></a>
 			
 			<form th:action="@{/pessoa}" method="post" id="form_pessoa">
@@ -76,7 +76,7 @@
 				</ul>
 
 				<div class="tab-content">
-					<!-- Cadastro observação -->
+					<!-- Cadastro observação. -->
 					<div id="home" class="tab-pane fade in active">
 						<br />
 						<textarea rows="5" cols="90" name="observacao"
@@ -84,7 +84,7 @@
 					</textarea>
 					</div>
 
-					<!-- Cadastro endereço -->
+					<!-- Cadastro endereço. -->
 					<div id="menu1" class="tab-pane fade">
 						<br /> <input type="hidden" id="codendereco" th:field="*{endereco.codigo}" />
 
@@ -137,7 +137,7 @@
 						</div>
 					</div>
 
-					<!-- Cadastro contato -->
+					<!-- Cadastro contato. -->
 					<div id="menu2" class="tab-pane fade">
 						<input type="hidden" id="codfone" th:field="*{telefone.codigo}" /> <br />
 						<div class="row">
@@ -163,4 +163,5 @@
 		</div>
 	</div>
 </section>
+
 </html>
