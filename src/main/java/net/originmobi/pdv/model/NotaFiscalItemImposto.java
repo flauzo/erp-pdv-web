@@ -219,5 +219,4 @@ public class NotaFiscalItemImposto implements Serializable {
 	public void setV_ipi(Double v_ipi) {
 		this.v_ipi = v_ipi;
 	}
-
 }
