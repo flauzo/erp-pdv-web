@@ -193,5 +193,4 @@ public class NotaFiscalTotais implements Serializable {
 	public void setV_nf(Double v_nf) {
 		this.v_nf = v_nf;
 	}
-
 }
