@@ -59,7 +59,6 @@ public class TituloController {
 			return TITULO_FORM;
 
 		titulos.cadastro(titulo);
-
 		return "redirect:/titulos";
 	}
 
