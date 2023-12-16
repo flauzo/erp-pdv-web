@@ -67,7 +67,6 @@ public class AjusteController {
 		headers.setLocation(uri.toUri());
 
 		Long codigo = ajustes.novo();
-
 		return headers + codigo.toString();
 	}
 
@@ -104,7 +103,6 @@ public class AjusteController {
 		headers.setLocation(component.toUri());
 		
 		ajustes.remover(ajuste);
-		
 		return component.toString();
 	}
 	
