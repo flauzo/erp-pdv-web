@@ -16,6 +16,7 @@
 					<th class="col-xs-2">Data Lançamento</th>
 				</tr>
 			</thead>
+
 			<tbody>
 				<tr th:each="lancamento : ${lancamentos}" th:classappend="${lancamento.isEntrada()} ? 'success' : 'danger'">
 					<td class="col-xs-2" th:text="${lancamento.codigo}"></td>
@@ -29,4 +30,5 @@
 		</table>
 	</div>
 </div>
+
 </html>
