@@ -93,5 +93,4 @@ public class EmpresaController {
 	private List<TipoAmbiente> ambientes() {
 		return ambientes.lista();
 	}
-
 }
