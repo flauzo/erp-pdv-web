@@ -80,5 +80,4 @@ public class AjusteProduto implements Serializable {
 	public void setQtd_nova(int qtd_nova) {
 		this.qtd_nova = qtd_nova;
 	}
-
 }
