@@ -20,5 +20,4 @@ public class ClienteFilter {
 	public void setPago(Boolean pago) {
 		this.pago = pago;
 	}
-
 }
