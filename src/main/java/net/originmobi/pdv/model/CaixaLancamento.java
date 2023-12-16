@@ -31,7 +31,7 @@ public class CaixaLancamento implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@Size(max = 250, message = "Quantidade máxima de caracteres para observação é de 250")
+	@Size(max = 250, message = "Quantidade máxima de caracteres para observação é de 250.")
 	private String observacao;
 
 	@NumberFormat(pattern = "##,##0.00")
@@ -147,5 +147,4 @@ public class CaixaLancamento implements Serializable {
 	public void setParcelaPagar(PagarParcela parcelaPagar) {
 		this.parcelaPagar = parcelaPagar;
 	}
-
 }
