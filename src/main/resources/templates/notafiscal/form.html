@@ -11,10 +11,10 @@
 			<form th:object="${nota}" id="form_notafiscal">
 				<input type="hidden" th:field="*{codigo}" id="codnota" />
 				
-				<!-- USO ESTE LINK PARA PEGAR O LINK DA NOTA NO AJAX -->
+				<!-- USO ESTE LINK PARA PEGAR O LINK DA NOTA NO AJAX. -->
 				<a th:href="@{/notafiscal}" id="link-notafiscal"></a>
 				
-				<!-- USO ESTE LINK PARA PEGAR O LINK DA NOTA NO AJAX -->
+				<!-- USO ESTE LINK PARA PEGAR O LINK DA NOTA NO AJAX. -->
 				<a th:href="@{/notafiscalitem}" id="link-nota-item"></a>
 				
 				<h2 class="text-center">Nota Fiscal</h2>
@@ -153,8 +153,6 @@
 										disabled="disabled" />
 								</div>
 							</div>
-
-
 						</div>
 					</div>
 
@@ -189,4 +187,5 @@
 		</div>
 	</div>
 </section>
+
 </html>
