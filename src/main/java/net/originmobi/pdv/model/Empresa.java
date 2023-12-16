@@ -22,12 +22,12 @@ public class Empresa implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@NotBlank(message = "Nome não pode ser em branco")
-	@Size(min = 4, max = 255, message = "Quantidade minima de caracteres é de 4 e máxima de 255")
+	@NotBlank(message = "Nome não pode ser em branco.")
+	@Size(min = 4, max = 255, message = "Quantidade minima de caracteres é de 4 e máxima de 255.")
 	private String nome;
 
-	@NotBlank(message = "Nome não pode ser em branco")
-	@Size(min = 4, max = 255, message = "Quantidade minima de caracteres é de 4 e máxima de 255")
+	@NotBlank(message = "Nome não pode ser em branco.")
+	@Size(min = 4, max = 255, message = "Quantidade minima de caracteres é de 4 e máxima de 255.")
 	private String nome_fantasia;
 
 	@CNPJ
@@ -57,7 +57,6 @@ public class Empresa implements Serializable {
 		this.regime_tributario = regime;
 		this.endereco = endereco;
 		this.parametro = parametro;
-
 	}
 
 	public Long getCodigo() {
@@ -123,5 +122,4 @@ public class Empresa implements Serializable {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-
 }
