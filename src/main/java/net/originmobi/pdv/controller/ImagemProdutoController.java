@@ -29,5 +29,4 @@ public class ImagemProdutoController {
 
 		return imagens.cadastrar(file, codigo);
 	}
-
 }
