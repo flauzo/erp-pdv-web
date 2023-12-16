@@ -12,5 +12,4 @@ public enum AjusteStatus {
 	public String getDescricao() {
 		return descricao;
 	}
-
 }
