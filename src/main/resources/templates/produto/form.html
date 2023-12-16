@@ -23,13 +23,12 @@
 					class="fa fa-list fa-lg"> Listar</span> </a>
 			</div>
 
-
 			<form method="post" th:action="@{/produto}" th:object="${produto}"
 				id="form_produto">
 
 				<input type="hidden" th:field="*{codigo}" id="codigoProduto" />
 
-				<!-- USO ESTE LINK PARA PEGAR O LINK DO PRODUTO NO AJAX -->
+				<!-- USO ESTE LINK PARA PEGAR O LINK DO PRODUTO NO AJAX. -->
 				<a th:href="@{/produto}" id="link-produto"></a>
 
 				<div class="row">
@@ -166,7 +165,7 @@
 				<div class="row">
 					<div class="form-group col-md-3">
 						<hr />
-						<label for="unidade">Informações que saem na nota fiscal</label>
+						<label for="unidade">Informações que saem na nota fiscal.</label>
 					</div>
 				</div>
 
@@ -227,4 +226,5 @@
 		</div>
 	</div>
 </section>
+
 </html>
