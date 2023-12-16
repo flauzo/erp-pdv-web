@@ -66,7 +66,7 @@ public class PessoaController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public @ResponseBody String cadastrar(@RequestParam Map<String, String> request, RedirectAttributes attributes) throws ParseException {
-		// Pessoa
+		// Pessoa.
 		String stCodPessoa = request.get("codigo") != null ? request.get("codigo") : "";
 		String nome = request.get("nome");
 		String apelido = request.get("apelido");
@@ -74,7 +74,7 @@ public class PessoaController {
 		String data_nascimento = request.get("data_nascimento");
 		String observacao = request.get("observacao");
 		
-		// Endereço
+		// Endereço.
 		String stCodEndereco = request.get("codendereco") != null ? request.get("codendereco") : "";
 		Long codcidade = Long.decode(request.get("cidade"));
 		String rua = request.get("rua");
@@ -83,7 +83,7 @@ public class PessoaController {
 		String cep = request.get("cep");
 		String referencia = request.get("referencia");
 
-		// Fone
+		// Fone.
 		String stCodFone = request.get("codfone") != null ? request.get("codfone") : "";
 		String fone = request.get("fone");
 		String tipo = request.get("tipo");
@@ -124,5 +124,4 @@ public class PessoaController {
 	public List<TelefoneTipo> telefoneTipo() {
 		return Arrays.asList(TelefoneTipo.values());
 	}
-
 }
