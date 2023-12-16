@@ -56,5 +56,4 @@ public class Cidade implements Serializable {
 	public void setCodigo_municipio(String codigo_minicipio) {
 		this.codigo_municipio = codigo_minicipio;
 	}
-
 }
