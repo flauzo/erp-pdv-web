@@ -67,5 +67,4 @@ public class Estado implements Serializable {
 	public void setPais(Pais pais) {
 		this.pais = pais;
 	}
-
 }
