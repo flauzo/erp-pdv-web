@@ -11,5 +11,4 @@ public class AjusteFilter {
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
-
 }
