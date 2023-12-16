@@ -3,7 +3,7 @@
  *
  * https://jqueryvalidation.org/
  *
- * Copyright (c) 2017 Jörn Zaefferer
+ * Copyright (c) 2017
  * Released under the MIT license
  */
 (function( factory ) {
@@ -21,21 +21,21 @@ $.extend( $.fn, {
 	// https://jqueryvalidation.org/validate/
 	validate: function( options ) {
 
-		// If nothing is selected, return nothing; can't chain anyway
+		// Se nada estiver selecionado, não retorne nada; não posso encadear de qualquer maneira.
 		if ( !this.length ) {
 			if ( options && options.debug && window.console ) {
-				console.warn( "Nothing selected, can't validate, returning nothing." );
+				console.warn( "Nada selecionado, não é possível validar, não retornando nada." );
 			}
 			return;
 		}
 
-		// Check if a validator for this form was already created
+		// Verifique se um validador para este formulário já foi criado.
 		var validator = $.data( this[ 0 ], "validator" );
 		if ( validator ) {
 			return validator;
 		}
 
-		// Add novalidate tag if HTML5.
+		// Adicionar tag novalidate se HTML5.
 		this.attr( "novalidate", "novalidate" );
 
 		validator = new $.validator( options, this[ 0 ] );
@@ -45,16 +45,16 @@ $.extend( $.fn, {
 
 			this.on( "click.validate", ":submit", function( event ) {
 
-				// Track the used submit button to properly handle scripted
-				// submits later.
+				// Rastreie o botão de envio usado para lidar adequadamente com o script
+				// enviado mais tarde.
 				validator.submitButton = event.currentTarget;
 
-				// Allow suppressing validation by adding a cancel class to the submit button
+				// Permitir a supressão da validação adicionando uma classe de cancelamento ao botão de envio.
 				if ( $( this ).hasClass( "cancel" ) ) {
 					validator.cancelSubmit = true;
 				}
 
-				// Allow suppressing validation by adding the html5 formnovalidate attribute to the submit button
+				// Permitir a supressão da validação adicionando o atributo html5 formnovalidate ao botão de envio.
 				if ( $( this ).attr( "formnovalidate" ) !== undefined ) {
 					validator.cancelSubmit = true;
 				}
@@ -1470,14 +1470,14 @@ $.extend( $.validator, {
 				decimals;
 
 			// Works only for text, number and range input types
-			// TODO find a way to support input types date, datetime, datetime-local, month, time and week
+			// TODO find a way to support input types date, datetime, datetime-local, month, time and week.
 			if ( notSupported ) {
 				throw new Error( errorMessage );
 			}
 
 			decimals = decimalPlaces( param );
 
-			// Value can't have too many decimals
+			// Value can't have too many decimals.
 			if ( decimalPlaces( value ) > decimals || toInt( value ) % toInt( param ) !== 0 ) {
 				valid = false;
 			}
@@ -1488,7 +1488,7 @@ $.extend( $.validator, {
 		// https://jqueryvalidation.org/equalTo-method/
 		equalTo: function( value, element, param ) {
 
-			// Bind to the blur event of the target in order to revalidate whenever the target field is updated
+			// Bind to the blur event of the target in order to revalidate whenever the target field is updated.
 			var target = $( param );
 			if ( this.settings.onfocusout && target.not( ".validate-equalTo-blur" ).length ) {
 				target.addClass( "validate-equalTo-blur" ).on( "blur.validate-equalTo", function() {
@@ -1569,7 +1569,7 @@ $.extend( $.validator, {
 var pendingRequests = {},
 	ajax;
 
-// Use a prefilter if available (1.5+)
+// Use a prefilter if available (1.5+).
 if ( $.ajaxPrefilter ) {
 	$.ajaxPrefilter( function( settings, _, xhr ) {
 		var port = settings.port;
@@ -1582,7 +1582,7 @@ if ( $.ajaxPrefilter ) {
 	} );
 } else {
 
-	// Proxy ajax
+	// Proxy ajax.
 	ajax = $.ajax;
 	$.ajax = function( settings ) {
 		var mode = ( "mode" in settings ? settings : $.ajaxSettings ).mode,
