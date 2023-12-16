@@ -21,21 +21,21 @@ public class Endereco implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@NotBlank(message = "Favor, informe a rua")
-	@Size(max = 150, message = "Tamanho máximo para rua é de 150 caracteres")
+	@NotBlank(message = "Favor, informe a rua.")
+	@Size(max = 150, message = "Tamanho máximo para Rua é de 150 caracteres.")
 	private String rua;
 
-	@NotBlank(message = "Favor, informe o bairro")
-	@Size(max = 50, message = "Tamanho máximo para bairro é de 50 caracteres")
+	@NotBlank(message = "Favor, informe o bairro.")
+	@Size(max = 50, message = "Tamanho máximo para Bairro é de 50 caracteres.")
 	private String bairro;
 
-	@NotNull(message = "Favor, informe o numero")
+	@NotNull(message = "Favor, informe o numero.")
 	private String numero;
 
-	@Size(max = 25, message = "Tamanho máximo para CEP é de 25 caracteres")
+	@Size(max = 25, message = "Tamanho máximo para CEP é de 25 caracteres.")
 	private String cep;
 
-	@Size(max = 150, message = "Tamanho máximo para referência é de 150 caracteres")
+	@Size(max = 150, message = "Tamanho máximo para referência é de 150 caracteres.")
 	private String referencia;
 	private Date data_cadastro;
 
@@ -120,5 +120,4 @@ public class Endereco implements Serializable {
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
-
 }
