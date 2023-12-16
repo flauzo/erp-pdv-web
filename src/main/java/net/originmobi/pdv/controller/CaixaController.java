@@ -122,7 +122,6 @@ public class CaixaController {
 		} catch (Exception e) {
 			e.getStackTrace();
 		}
-
 		return retorno;
 	}
 
@@ -145,7 +144,6 @@ public class CaixaController {
 		} catch (Exception e) {
 			e.getStackTrace();
 		}
-
 		return retorno;
 	}
 
@@ -160,7 +158,6 @@ public class CaixaController {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		
 		return mensagem;
 	}
 	
