@@ -23,7 +23,7 @@ public class Titulo implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@NotBlank(message = "Descrição é obrigatória")
+	@NotBlank(message = "Descrição é obrigatória.")
 	private String descricao;
 
 	@ManyToOne
@@ -69,5 +69,4 @@ public class Titulo implements Serializable {
 	public void setMaquina(MaquinaCartao maquina) {
 		this.maquina = maquina;
 	}
-
 }
