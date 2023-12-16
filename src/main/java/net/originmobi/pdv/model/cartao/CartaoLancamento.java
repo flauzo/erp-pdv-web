@@ -204,5 +204,4 @@ public class CartaoLancamento implements Serializable {
 	public void setData_cadastro(Date data_cadastro) {
 		this.data_cadastro = data_cadastro;
 	}
-
 }
