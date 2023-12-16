@@ -26,6 +26,7 @@ import net.originmobi.pdv.enumerado.produto.ProdutoControleEstoque;
 import net.originmobi.pdv.enumerado.produto.ProdutoSubstTributaria;
 import net.originmobi.pdv.enumerado.produto.ProdutoVendavel;
 
+
 @Entity
 public class Produto implements Serializable {
 
