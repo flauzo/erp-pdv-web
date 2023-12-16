@@ -23,8 +23,8 @@ public class MaquinaCartao implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@NotBlank(message = "Descrição não pode ser vazia")
-	@Size(min = 4, message = "Descrição deve ter no minimo 4 caracteres")
+	@NotBlank(message = "Descrição não pode ser vazia.")
+	@Size(min = 4, message = "Descrição deve ter no Minimo 4 caracteres.")
 	private String descricao;
 
 	@NumberFormat(pattern = "#,##0.00")
@@ -108,5 +108,4 @@ public class MaquinaCartao implements Serializable {
 	public void setTaxa_antecipacao(Double taxa_antecipacao) {
 		this.taxa_antecipacao = taxa_antecipacao;
 	}
-
 }
