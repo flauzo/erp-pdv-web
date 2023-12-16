@@ -24,7 +24,7 @@ public class PagarTipo implements Serializable {
 	private Long codigo;
 
 	@NotNull(message = "Descrição não pode ser vazia")
-	@Size(min = 4, max = 200, message = "Favor, informe no minimo 4 caracteres")
+	@Size(min = 4, max = 200, message = "Favor, Informe no minimo 4 caracteres.")
 	private String descricao;
 
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
@@ -63,5 +63,4 @@ public class PagarTipo implements Serializable {
 	public void setData_cadastro(Timestamp data_cadastro) {
 		this.data_cadastro = data_cadastro;
 	}
-
 }
