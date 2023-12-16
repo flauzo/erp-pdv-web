@@ -17,13 +17,13 @@ public class CFOP implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@Size(max = 4, message = "Tamanho máximo do CFOP é de 4 digitos")
+	@Size(max = 4, message = "Tamanho máximo do CFOP é de 4 digitos.")
 	private String cfop;
 
-	@Size(max = 250, message = "Tamanho máximo da descrição é de 250 caracteres")
+	@Size(max = 250, message = "Tamanho máximo da descrição é de 250 caracteres.")
 	private String descricao;
 
-	@Size(max = 400, message = "Tamanho máximo da descrição é de 250 caracteres")
+	@Size(max = 400, message = "Tamanho máximo da descrição é de 250 caracteres.")
 	private String aplicacao;
 
 	public CFOP() {
@@ -61,5 +61,4 @@ public class CFOP implements Serializable {
 	public void setAplicacao(String aplicacao) {
 		this.aplicacao = aplicacao;
 	}
-
 }
