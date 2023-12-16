@@ -21,7 +21,7 @@ public class PagamentoTipo implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@NotBlank(message = "Descrição não pode ser em branco")
+	@NotBlank(message = "Descrição não pode ser em branco.")
 	private String descricao;
 
 	@Column(name = "forma_pagamento")
@@ -79,5 +79,4 @@ public class PagamentoTipo implements Serializable {
 	public void setQtd_parcelas(int qtd_parcelas) {
 		this.qtd_parcelas = qtd_parcelas;
 	}
-
 }
