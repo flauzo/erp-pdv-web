@@ -155,7 +155,6 @@ public class ProdutoController {
 			return "redirect:/produto/" + codigoprod.toString();
 		
 		return "redirect:/produto";
-
 	}
 
 	@GetMapping("{codigo}")
