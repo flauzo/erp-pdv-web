@@ -15,7 +15,7 @@ $(function() {
 		$("#userDado").prop("disabled", false);
 	}
 
-	// responsável por adicionar um novo grupo ao usuário
+	// responsável por adicionar um novo grupo ao usuário.
 	$('.body-usuario').on('click', '.js-add-grupo', function(event) {
 		event.preventDefault();
 
@@ -37,13 +37,13 @@ $(function() {
 				$(".carrega").empty();
 				
 				if (e == "grupo vazio")
-					alert("Favor, selecione um grupo");
+					alert("Favor, selecione um grupo.");
 				else if (e == "ok") {
 					$("#tabela-grupos").load(" #tabela-grupos");
-					alert("Grupo adicionado com sucesso");
+					alert("Grupo adicionado com sucesso.");
 				}
 				else if (e == "ja existe")
-					alert("Grupo já esta adicionado a este usuário");
+					alert("Grupo já esta adicionado a este usuário.");
 			},
 			
 			error : function(e) {
@@ -53,7 +53,7 @@ $(function() {
 		});
 	});
 
-	// responsável por remover um grupo do usuário
+	// responsável por remover um grupo do usuário.
 	$('.body-usuario').on('click', 'a.js-remove-grupo', function(event) {
 		event.preventDefault();
 
@@ -76,7 +76,7 @@ $(function() {
 				$("#tabela-grupos").load(" #tabela-grupos");
 				
 				if (e == "ok") {
-					alert("Grupo removido com sucesso");
+					alert("Grupo removido com sucesso.");
 				}
 			},
 			
