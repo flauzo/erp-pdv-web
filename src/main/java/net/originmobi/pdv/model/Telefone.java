@@ -14,6 +14,7 @@ import javax.validation.constraints.Size;
 
 import net.originmobi.pdv.enumerado.TelefoneTipo;
 
+
 @Entity
 public class Telefone implements Serializable {
 
