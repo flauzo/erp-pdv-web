@@ -45,5 +45,4 @@ public class Pais implements Serializable {
 	public void setCodigo_pais(String codigo_pais) {
 		this.pais_codigo = codigo_pais;
 	}
-
 }
