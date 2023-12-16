@@ -1,6 +1,6 @@
 $(function() {
 
-	// responsável por limpar os dados do modalregratributaria
+	// responsável por limpar os dados do modalregratributaria.
 	$('.btn-nova-regra').on('click', function(e) {
 		document.getElementById("tipo").value = '';
 		document.getElementById("uf").value = '';
@@ -15,7 +15,7 @@ $(function() {
 		$("input[name='aliq_icms']").val("");
 	});
 
-	// responsável por cadastrar nova regra
+	// responsável por cadastrar nova regra.
 	$('.body-regras-fiscais').on('click', '.btn-salva-regra', function(event) {
 		event.preventDefault();
 
@@ -31,7 +31,6 @@ $(function() {
 				$(".carrega").html(
 				"<p class='carregando'></p>");
 			},
-			
 
 			success : function(e) {
 				$(".carrega").empty();
@@ -56,7 +55,7 @@ $(function() {
 		})
 	});
 
-	// responsável por deletar regra
+	// responsável por deletar regra.
 	$('.fiscal-dados-regras').on('click', '.btn-delete-regra', function(event) {
 		event.preventDefault();
 
@@ -75,7 +74,6 @@ $(function() {
 					$(".carrega").html(
 					"<p class='carregando'></p>");
 				},
-				
 
 				success : function(e) {
 					$(".carrega").empty();
@@ -91,7 +89,7 @@ $(function() {
 			});
 	});
 
-	// responsável por editar regra
+	// responsável por editar regra.
 	$('.fiscal-dados-regras')
 			.on(
 					'click',
@@ -101,8 +99,7 @@ $(function() {
 
 						var codigo = $(this).data('codregra');
 						var link = $('.btn-edita-regra').attr('href') + codigo;
-						
-						
+
 						$.ajax({
 									url : link,
 									type : "PUT",
@@ -111,7 +108,6 @@ $(function() {
 										$(".carrega").html(
 										"<p class='carregando'></p>");
 									},
-									
 
 									success : function(e) {
 										$(".carrega").empty();
@@ -132,7 +128,6 @@ $(function() {
 										$('input[name="aliq_ipi"]').val(e.aliq_ipi);
 										$('input[name="aliq_icms"]').val(e.aliq_icms);
 										$('input[name="pis"]').val(e.pis);
-										
 									},
 
 									error : function(jqXHR, status, error) {
