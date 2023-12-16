@@ -34,6 +34,7 @@
 						<th></th>
 					</tr>
 				</thead>
+
 				<tbody>
 					<tr th:each="parcela : ${parcelas}"
 						th:classappend="${parcela.isQuitado()} ? 'warning' : 'success'">
@@ -72,4 +73,5 @@
 		</div>
 	</div>
 </section>
+
 </html>
