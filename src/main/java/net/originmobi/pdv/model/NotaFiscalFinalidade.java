@@ -47,5 +47,4 @@ public class NotaFiscalFinalidade implements Serializable {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
 }
