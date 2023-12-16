@@ -76,5 +76,4 @@ public class ImagemProduto implements Serializable {
 	public void setUri(String uri) {
 		this.uri = uri;
 	}
-
 }
