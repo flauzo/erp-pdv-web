@@ -64,13 +64,12 @@ public class NotaFiscalController {
 		UriComponents uri = b.path("/notafiscal/").build();
 		HttpHeaders headers = new HttpHeaders();
 		headers.setLocation(uri.toUri());
-		
-		
+
 		if(request.get("natureza_operacao").isEmpty())
-			throw new RuntimeException("Favor, informe a natureza da operação");
+			throw new RuntimeException("Favor, informe a Natureza da operação.");
 		
 		if(request.get("destinatario").isEmpty())
-			throw new RuntimeException("Favor, informe o destinatário");
+			throw new RuntimeException("Favor, informe o Destinatário.");
 		
 		
 		Long coddesti = Long.decode(request.get("destinatario"));
