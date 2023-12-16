@@ -52,5 +52,4 @@ public class TributacaoRegraController {
 		TributacaoRegra regra = regras.busca(codigo);
 		return regra;
 	}
-
 }
