@@ -104,7 +104,6 @@ public class VendaController {
 		}
 
 		return "redirect:/venda/" + codigo.toString();
-
 	}
 
 	@GetMapping("{codigo}")
