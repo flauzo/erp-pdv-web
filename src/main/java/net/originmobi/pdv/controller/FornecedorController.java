@@ -122,5 +122,4 @@ public class FornecedorController {
 	public List<TelefoneTipo> telefoneTipo() {
 		return Arrays.asList(TelefoneTipo.values());
 	}
-
 }
