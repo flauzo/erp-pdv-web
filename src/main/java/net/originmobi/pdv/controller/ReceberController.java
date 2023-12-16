@@ -80,7 +80,6 @@ public class ReceberController {
 		String mensagem = null;
 
 		mensagem = parcelas.receber(parcela, totalPago, acrescimo, desconto);
-
 		return mensagem;
 	}
 
@@ -95,7 +94,6 @@ public class ReceberController {
 		headers.setLocation(builder.toUri());
 		
 		String retorno = recebimentos.abrirRecebimento(codpes, arrayParcelas);
-		
 		return headers.toString() + retorno;
 	}
 
