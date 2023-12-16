@@ -11,5 +11,4 @@ public class VendaFilter {
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
-
 }
