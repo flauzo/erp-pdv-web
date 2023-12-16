@@ -119,5 +119,4 @@ public class PagarController {
 	public List<Caixa> caixasAbertos() {
 		return caixas.caixasAbertos();
 	}
-
 }
