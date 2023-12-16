@@ -22,6 +22,7 @@
 					<td class="text-center">Forma Pagamento</td>
 					<td></td>
 				</tr>
+
 				<tr th:each="tipopagamento : ${formaspagamento}">
 					<td th:text="${tipopagamento.codigo}" class="text-center"></td>
 					<td th:text="${tipopagamento.descricao}"></td>
@@ -34,4 +35,5 @@
 		</table>
 	</div>
 </section>
+
 </html>
