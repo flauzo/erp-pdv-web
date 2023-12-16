@@ -3,7 +3,6 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-
 <div class="modal fade modalPagamento" tabindex="-1" role="dialog"
 	aria-labelledby="mySmallModalLabel">
 	<div class="modal-dialog modal-sm modal-pagamento" role="document">
@@ -20,17 +19,17 @@
 								class="form-control js-mascara" disabled="disabled" />
 						</div>
 					</div>
-					<!-- campo auxiliar para passar valor na serialização do form -->
+					<!-- campo auxiliar para passar valor na serialização do form. -->
 					<input id="vlprod" name="valor_produtos" type="hidden" />
 
-					<!-- campo auxiliar para passar valor na serialização do form -->
+					<!-- campo auxiliar para passar valor na serialização do form. -->
 					<input id="vltroco" type="hidden" name="troco" />
 
-					<!-- uso para pegar o link de pagamento no ajax -->
+					<!-- uso para pegar o link de pagamento no ajax. -->
 					<a th:href="@{/pagamentotipo/qtdparcelas/}"
 						id="link-pagamento-venda"></a>
 						
-					<!-- uso para pegar o link do json que me retorna os titulos na requisição ajax -->
+					<!-- uso para pegar o link do json que me retorna os titulos na requisição ajax. -->
 					<a th:href="@{/venda/titulos}" id="link-titulos"></a>
 
 					<div class="row">
