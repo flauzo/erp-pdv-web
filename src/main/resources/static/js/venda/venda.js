@@ -1,6 +1,6 @@
 $(function() {
 
-	// responsável por adicionar um novo produto á venda
+	// responsável por adicionar um novo produto á venda.
 	$(".formdavenda").on(
 			"click",
 			".js-addvenda-produto",
@@ -15,7 +15,7 @@ $(function() {
 
 				var valor = 0;
 
-				// verifica se tem balanca
+				// verifica se tem balanca.
 				if (balanca == 'SIM') {
 					valor = prompt("Informe o valor");
 				} 
@@ -40,17 +40,16 @@ $(function() {
 						
 						if (e == "Venda fechada")
 							alert("Venda Fechada");
-						
 					}
 				});
 
 				response.fail(function(e) {
 					$(".carrega").empty();
-					alert("Falha no processo");
+					alert("Falha no processo.");
 				});
 			});
 
-	// responsável por remover um produto da venda
+	// responsável por remover um produto da venda.
 	$('#tabProdutoVenda').on(
 			'click',
 			'a.js-removeproduto-venda',
@@ -75,8 +74,7 @@ $(function() {
 							$(".carrega").html(
 							"<p class='carregando'></p>");
 						},
-						
-						
+
 						success : function(e) {
 							$(".carrega").empty();
 							$("#tabProdutoVenda").load(" #tabProdutoVenda");
@@ -93,7 +91,7 @@ $(function() {
 				});
 			});
 
-	// responsável por realizar o fechamanto da venda
+	// responsável por realizar o fechamanto da venda.
 	$('.formdavenda').on(
 			'click',
 			'.btn-pagamento',
@@ -149,7 +147,7 @@ $(function() {
 			});
 
 	// Responsável por identificar a forma de pagamento e disponibilizar os
-	// inputs para os valores
+	// inputs para os valores.
 	$('#pagamento')
 			.change(
 					function() {
@@ -175,7 +173,7 @@ $(function() {
 												.remove();
 
 										// verifico a quantidade de vezes do
-										// plano e adiciono um input para cada
+										// plano e adiciono um input para cada.
 										var i;
 										for (i = 0; i < e; i++) {
 											$("#tipopagamento")
@@ -188,7 +186,7 @@ $(function() {
 																	+ "</div></div>");
 
 											// adiciono a mascara de R$ para o
-											// input adicionado
+											// input adicionado.
 											$(".vlparcela").maskMoney({
 												prefix : 'R$ ',
 												allowNegative : true,
@@ -202,19 +200,19 @@ $(function() {
 											var vl1 = parseFloat(mascaraValor(total));
 
 											// incremento +1 porque o contador
-											// inicia em zero
+											// inicia em zero.
 											i = i + 1;
 
 											vl1 = (vl1 / i).toFixed(2).replace(
 													'.', ',');
 
 											// passo o valor dividido pela
-											// quantidade de parcelas
+											// quantidade de parcelas.
 											$("input[name='valor_parcela[]']")
 													.val(vl1);
 											i--; // volto o valor atual dele
 											// para não dar problema na
-											// sequência
+											// sequência.
 										}
 									},
 
@@ -228,7 +226,7 @@ $(function() {
 								});
 
 						// busco os estilos DIN, CARTÃO... e os recebo em
-						// formato JSON, assim munto o select no front-end
+						// formato JSON, assim munto o select no front-end.
 						
 						var link_titulos = $('#link-titulos').attr('href');
 						$.ajax({
@@ -247,7 +245,7 @@ $(function() {
 						});
 					});
 
-	// Responsável por calcular o desconto
+	// Responsável por calcular o desconto.
 	$(".valorpago").blur(function() {
 		var total = $('#vlprod').val();
 		var recebido = $('.valorpago').val();
@@ -268,7 +266,7 @@ $(function() {
 		$("input[name='troco']").val(troco.toFixed(2).replace('.', ','));
 	});
 
-	// responsável por adicionar valor dos campos do modal de pagamento
+	// responsável por adicionar valor dos campos do modal de pagamento.
 	$('#btn-venda').on('click', function(e) {
 
 		// $("input[name='valor_pago']").val("");
@@ -281,7 +279,7 @@ $(function() {
 		// $("input[name='valor_pago']").val(total);
 	});
 
-	// responsável por limpar o campo de valor recebido do modal de pagar
+	// responsável por limpar o campo de valor recebido do modal de pagar.
 	$('.btn-limpa-valor').on('click', function(event) {
 		event.preventDefault();
 
