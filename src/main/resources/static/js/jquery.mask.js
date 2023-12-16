@@ -1,39 +1,36 @@
 /**
  * jquery.mask.js
  * @version: v1.14.13
- * @author: Igor Escobar
  *
  * Created by Igor Escobar on 2012-03-10. Please report any bug at github.com/igorescobar/jQuery-Mask-Plugin
- *
  * Copyright (c) 2012 Igor Escobar http://igorescobar.com
- *
  * The MIT License (http://www.opensource.org/licenses/mit-license.php)
  *
- * Permission is hereby granted, free of charge, to any person
- * obtaining a copy of this software and associated documentation
- * files (the "Software"), to deal in the Software without
- * restriction, including without limitation the rights to use,
- * copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the
- * Software is furnished to do so, subject to the following
- * conditions:
+ * A permissão é concedida gratuitamente a qualquer pessoa
+ * obter uma cópia deste software e documentação associada
+ * arquivos (o "Software"), para lidar com o Software sem
+ * restrição, incluindo, sem limitação, os direitos de uso,
+ * copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender
+ * cópias do Software, e para permitir que pessoas a quem o
+ * O software é fornecido para isso, sujeito às seguintes
+ * condições:
  *
- * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software.
+ * O aviso de direitos autorais acima e este aviso de permissão devem ser
+ * incluído em todas as cópias ou partes substanciais do Software.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
- * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
- * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
- * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
- * OTHER DEALINGS IN THE SOFTWARE.
+ * O SOFTWARE É FORNECIDO "COMO ESTÁ", SEM GARANTIA DE QUALQUER TIPO,
+ * EXPRESSA OU IMPLÍCITA, INCLUINDO, MAS NÃO SE LIMITANDO ÀS GARANTIAS
+ * DE COMERCIALIZAÇÃO, ADEQUAÇÃO A UM DETERMINADO FIM E
+ * NÃO VIOLAÇÃO. EM HIPÓTESE ALGUMA OS AUTORES OU DIREITOS AUTORAIS
+ * OS TITULARES SERÃO RESPONSÁVEIS POR QUALQUER RECLAMAÇÃO, DANOS OU OUTRA RESPONSABILIDADE,
+ * SEJA EM UMA AÇÃO DE CONTRATO, ATO ILÍCITO OU OUTRO, DECORRENTE
+ * DE, FORA DE OU EM CONEXÃO COM O SOFTWARE OU COM O USO OU
+ * OUTRAS NEGOCIAÇÕES NO SOFTWARE.
  */
 
 /* jshint laxbreak: true */
 /* jshint maxcomplexity:17 */
-/* global define */
+/* definição global */
 
 // UMD (Universal Module Definition) patterns for JavaScript modules that work everywhere.
 // https://github.com/umdjs/umd/blob/master/templates/jqueryPlugin.js
@@ -62,13 +59,13 @@
                         dSel = document.selection,
                         cSelStart = ctrl.selectionStart;
 
-                    // IE Support
+                    // IE Support.
                     if (dSel && navigator.appVersion.indexOf('MSIE 10') === -1) {
                         sel = dSel.createRange();
                         sel.moveStart('character', -p.val().length);
                         pos = sel.text.length;
                     }
-                    // Firefox support
+                    // Firefox support.
                     else if (cSelStart || cSelStart === '0') {
                         pos = cSelStart;
                     }
@@ -84,7 +81,7 @@
                         // Firefox, WebKit, etc..
                         if (ctrl.setSelectionRange) {
                             ctrl.setSelectionRange(pos, pos);
-                        } else { // IE
+                        } else { // IE.
                             range = ctrl.createTextRange();
                             range.collapse(true);
                             range.moveEnd('character', pos);
@@ -118,17 +115,17 @@
                     el.data('changed', false);
                 })
                 // it's very important that this callback remains in this position
-                // otherwhise oldValue it's going to work buggy
+                // otherwhise oldValue it's going to work buggy.
                 .on('blur.mask', function() {
                     oldValue = p.val();
                 })
-                // select all text on focus
+                // select all text on focus.
                 .on('focus.mask', function (e) {
                     if (options.selectOnFocus === true) {
                         $(e.target).select();
                     }
                 })
-                // clear the value if it not complete the mask
+                // clear the value if it not complete the mask.
                 .on('focusout.mask', function() {
                     if (options.clearIfNotMatch && !regexMask.test(p.val())) {
                        p.val('');
@@ -227,7 +224,7 @@
                         }
                     }
 
-                    // if the cursor is at the end keep it there
+                    // if the cursor is at the end keep it there.
                     if (caretPosNew > oldValL) {
                       caretPosNew = newValL * 10;
                     } else if (caretPosOld >= caretPosNew && caretPosOld !== oldValL) {
@@ -258,7 +255,7 @@
                         caretPos = p.getCaret();
 
                     // this is a compensation to devices/browsers that don't compensate
-                    // caret positioning the right way
+                    // caret positioning the right way.
                     setTimeout(function() {
                       p.setCaret(p.calculateCaretPosition());
                     }, 10);
@@ -320,7 +317,7 @@
                         } else if (valDigit === lastUntranslatedMaskChar) {
                             // matched the last untranslated (raw) mask character that we encountered
                             // likely an insert offset the mask character from the last entry; fall
-                            // through and only increment v
+                            // through and only increment v.
                             maskDigitCount--;
                             lastUntranslatedMaskChar = undefined;
                         } else if (translation.optional) {
@@ -390,7 +387,7 @@
 
         mask = typeof mask === 'function' ? mask(p.val(), undefined, el,  options) : mask;
 
-        // public methods
+        // public methods.
         jMask.mask = mask;
         jMask.options = options;
         jMask.remove = function() {
@@ -401,12 +398,12 @@
             return el;
         };
 
-        // get value without mask
+        // get value without mask.
         jMask.getCleanVal = function() {
            return p.getMasked(true);
         };
 
-        // get masked value without the value being in the input or element
+        // get masked value without the value being in the input or element.
         jMask.getMaskedVal = function(val) {
            return p.getMasked(false, val);
         };
@@ -568,7 +565,7 @@
         dataMask: true,
         watchInterval: 300,
         watchInputs: true,
-        // old versions of chrome dont work great with input event
+        // old versions of chrome dont work great with input event.
         useInput: !/Chrome\/[2-4][0-9]|SamsungBrowser/.test(window.navigator.userAgent) && eventSupported('input'),
         watchDataMask: false,
         byPassKeys: [9, 16, 17, 18, 36, 37, 38, 39, 40, 91],
@@ -584,7 +581,7 @@
     $.jMaskGlobals = $.jMaskGlobals || {};
     globals = $.jMaskGlobals = $.extend(true, {}, globals, $.jMaskGlobals);
 
-    // looking for inputs with data-mask attribute
+    // looking for inputs with data-mask attribute.
     if (globals.dataMask) {
         $.applyDataMask();
     }
