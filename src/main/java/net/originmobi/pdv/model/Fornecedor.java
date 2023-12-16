@@ -25,12 +25,12 @@ public class Fornecedor implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@NotNull(message = "Nome Fantasia é obrigatório")
-	@Size(max = 250, message = "Tamanho máximo de 250 caracteres")
+	@NotNull(message = "Nome Fantasia é obrigatório.")
+	@Size(max = 250, message = "Tamanho máximo de 250 caracteres.")
 	private String nome_fantasia;
 
-	@NotNull(message = "Nome é obrigatório")
-	@Size(max = 205, message = "Tamanho máximo de 250 caracteres")
+	@NotNull(message = "Nome é obrigatório.")
+	@Size(max = 205, message = "Tamanho máximo de 250 caracteres.")
 	private String nome;
 
 	@NotNull(message = "CNPJ é obrigatório")
@@ -39,13 +39,13 @@ public class Fornecedor implements Serializable {
 	@Size(max = 18)
 	private String cnpj;
 
-	@NotNull(message = "Inscrição Estadual é obrigatório")
+	@NotNull(message = "Inscrição Estadual é obrigatório.")
 	private String inscricao_estadual;
 
 	@NotNull
 	private int ativo;
 
-	@Size(max = 150, message = "Tamanho máximo permitido de 150 caracteres")
+	@Size(max = 150, message = "Tamanho máximo permitido de 150 caracteres.")
 	private String observacao;
 	private Date data_cadastro;
 
@@ -151,5 +151,4 @@ public class Fornecedor implements Serializable {
 	public void setObservacao(String observacao) {
 		this.observacao = observacao;
 	}
-
 }
