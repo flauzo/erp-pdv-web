@@ -36,10 +36,9 @@ public class TituloService {
 			titulos.deleteById(codigo);
 		} catch (Exception e) {
 			System.out.println(e);
-			throw new RuntimeException("Erro ao tentar remover este registro, chame o suporte");
+			throw new RuntimeException("Erro ao tentar Remover este Registro, chame o suporte.");
 		}
 
-		return "Registro removido com sucesso";
+		return "Registro removido com sucesso.";
 	}
-
 }
