@@ -1,5 +1,6 @@
 package net.originmobi.pdv.filter;
 
+
 public class BancoFilter {
 	
 	private String data_cadastro;
