@@ -24,7 +24,7 @@ public class Pagar implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@Size(max = 255, message = "O tamanho da observação deve conter apenas 255 caracteres")
+	@Size(max = 255, message = "O tamanho da Observação deve conter apenas 255 caracteres.")
 	private String observacao;
 
 	@NotNull
@@ -104,5 +104,4 @@ public class Pagar implements Serializable {
 	public void setTipo(PagarTipo tipo) {
 		this.tipo = tipo;
 	}
-
 }
