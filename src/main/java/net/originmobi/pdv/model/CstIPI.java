@@ -63,5 +63,4 @@ public class CstIPI implements Serializable {
 	public void setTipo(EntradaSaida tipo) {
 		this.tipo = tipo;
 	}
-
 }
