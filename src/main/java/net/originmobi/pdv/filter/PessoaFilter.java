@@ -11,5 +11,4 @@ public class PessoaFilter {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 }
