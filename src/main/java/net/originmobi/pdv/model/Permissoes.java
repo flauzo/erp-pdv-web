@@ -22,11 +22,11 @@ public class Permissoes implements Serializable {
 	private Long codigo;
 
 	@NotBlank(message = "Nome não pode ser vazio")
-	@Size(max = 45, message = "Tamanho máximo de 45 caracteres")
+	@Size(max = 45, message = "Tamanho máximo de 45 caracteres.")
 	private String nome;
 
 	@NotBlank(message = "Descrição não pode ser vazio")
-	@Size(max = 45, message = "Tamanho máximo de 45 caracteres")
+	@Size(max = 45, message = "Tamanho máximo de 45 caracteres.")
 	private String descricao;
 
 	@ManyToMany
@@ -86,5 +86,4 @@ public class Permissoes implements Serializable {
 	public void setUsuario(List<Usuario> usuario) {
 		this.usuario = usuario;
 	}
-
 }
