@@ -102,5 +102,4 @@ public class Ajuste implements Serializable {
 	public void setProdutos(List<AjusteProduto> produtos) {
 		this.produtos = produtos;
 	}
-
 }
