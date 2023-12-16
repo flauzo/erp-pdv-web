@@ -29,7 +29,7 @@ public class Caixa implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@Size(max = 250, message = "Valor máximo para descrição é de 250 caracteres")
+	@Size(max = 250, message = "Valor máximo para descrição é de 250 caracteres.")
 	private String Descricao;
 
 	@NumberFormat(pattern = "##,##0.00")
@@ -198,5 +198,4 @@ public class Caixa implements Serializable {
 	public void setConta(String conta) {
 		this.conta = conta;
 	}
-
 }
