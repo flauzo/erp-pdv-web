@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import net.originmobi.pdv.enumerado.EntradaSaida;
 
+
 @Entity
 public class TributacaoRegra implements Serializable {
 
