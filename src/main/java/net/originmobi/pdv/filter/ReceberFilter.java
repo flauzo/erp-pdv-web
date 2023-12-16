@@ -11,5 +11,4 @@ public class ReceberFilter {
 	public void setCliente(String cliente) {
 		this.cliente = cliente;
 	}
-
 }
