@@ -11,7 +11,6 @@
 
 			<h2 class="titulo-h1">Titulo</h2>
 
-
 			<form th:action="@{/titulos}" method="post" th:object="${titulo}">
 				<input type="hidden" name="codigo" th:field="*{codigo}" />
 
@@ -26,7 +25,6 @@
 					<a th:href="@{/titulos}" class="btn btn-azul-padrao"><span
 						class="fa fa-list fa-lg"> Listar</span> </a>
 				</div>
-
 
 				<div class="row">
 					<div class="form-group col-md-2">
@@ -54,7 +52,7 @@
 					</div>
 				</div>
 
-				<!-- pego o link para listar os bancos com js -->
+				<!-- pego o link para listar os bancos com js. -->
 				<a th:href="@{/maquinacartao/listaJson}" id="link_maquina"></a>
 
 				<div class="row">
@@ -73,4 +71,5 @@
 		</div>
 	</div>
 </section>
+
 </html>
