@@ -96,5 +96,4 @@ public class GrupoUsuarioController {
 	public List<Permissoes> permissoes() {
 		return permissoes.lista();
 	}
-
 }
