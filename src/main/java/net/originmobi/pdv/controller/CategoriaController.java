@@ -53,11 +53,10 @@ public class CategoriaController {
 
 		try {
 			categorias.cadastrar(categoria);
-			attributes.addFlashAttribute("mensagem", "Categoria salva com sucesso");
+			attributes.addFlashAttribute("mensagem", "Categoria salva com sucesso.");
 		} catch (Exception e) {
 			System.out.println("Erro ao cadastrar Categoria " + e);
 		}
 		return "redirect:/categoria/form";
 	}
-
 }
