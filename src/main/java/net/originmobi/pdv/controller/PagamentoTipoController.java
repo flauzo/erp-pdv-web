@@ -65,5 +65,4 @@ public class PagamentoTipoController {
 		mv.addObject("tipopagamento", pagamentoTipo);
 		return mv;
 	}
-
 }
