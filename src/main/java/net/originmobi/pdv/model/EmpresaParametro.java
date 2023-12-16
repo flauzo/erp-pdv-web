@@ -60,5 +60,4 @@ public class EmpresaParametro implements Serializable {
 	public void setpCredSN(Double pCredSN) {
 		this.pCredSN = pCredSN;
 	}
-
 }
