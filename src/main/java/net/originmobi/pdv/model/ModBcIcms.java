@@ -9,8 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * 
- * @author joao Responsável pela base de calculos do icms
+ * Base de calculos do icms.
  */
 
 @Entity
@@ -62,5 +61,4 @@ public class ModBcIcms implements Serializable {
 	public void setSub_tributaria(int sub_tributaria) {
 		this.sub_tributaria = sub_tributaria;
 	}
-
 }
