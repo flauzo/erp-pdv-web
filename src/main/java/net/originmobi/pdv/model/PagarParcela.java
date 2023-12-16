@@ -165,5 +165,4 @@ public class PagarParcela implements Serializable {
 	public void setPagar(Pagar pagar) {
 		this.pagar = pagar;
 	}
-
 }
