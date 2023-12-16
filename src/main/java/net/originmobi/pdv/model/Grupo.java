@@ -20,7 +20,7 @@ public class Grupo implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@NotBlank(message = "Descrição não pode ser vazia")
+	@NotBlank(message = "Descrição não pode ser vazia.")
 	@Size(max = 50)
 	private String descricao;
 	
@@ -59,5 +59,4 @@ public class Grupo implements Serializable {
 	public void setData_cadastro(Date data_cadastro) {
 		this.data_cadastro = data_cadastro;
 	}
-
 }
