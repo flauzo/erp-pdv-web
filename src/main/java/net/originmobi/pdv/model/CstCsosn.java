@@ -45,5 +45,4 @@ public class CstCsosn implements Serializable {
 	public void setSimples_nacional(int simples_nacial) {
 		this.simples_nacional = simples_nacial;
 	}
-
 }
