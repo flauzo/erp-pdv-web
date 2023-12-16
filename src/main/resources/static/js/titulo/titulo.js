@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	// Responsável por ativar a opção de selecionar o cadastro de banco quando o 
+	// Responsável por ativar a opção de Selecionar o cadastro de banco quando o 
 	// caixa é definido como sendo um banco.
 	$('#titulo_tipo').change(function() {
 		var tipo = $('#titulo_tipo').val();
@@ -9,12 +9,12 @@ $(document).ready(function() {
 		$('.maquina-info select').remove();
 		$('.maquina-info label').remove();
 		
-		//se for cartão crédito ou debito, insere o select dos bancos
+		//se for cartão crédito ou debito, insere o select dos bancos.
 		if(tipo == 2 || tipo == 3) {
 			$('.maquina-info').append("<label for='maquina'>Máquina</label><select name='maquina' class='form-control select_maquinacartao' th:field='*{maquina}' ></select>");
 		}
 		
-		// Responsável por buscar os registros dos bancos e inseri-los no select
+		// Responsável por buscar os registros dos bancos e inseri-los no select.
 		$.ajax({
 			dataType : 'json',
 			url : link,
@@ -47,15 +47,14 @@ $(document).ready(function() {
 			}
 		});
 	});
-	
-	
+
 	$('#body-titulos').on('click', '#btn-excluir-titulo', function(event) {
 		event.preventDefault();
 		
 		var link = $('#btn-excluir-titulo').attr('href');
 		console.log(link);
 		
-		var confirma = confirm("Tem certeza que deseja remover este registro?");
+		var confirma = confirm("Tem certeza que deseja Remover este registro?");
 
 		if (confirma == true)
 		
