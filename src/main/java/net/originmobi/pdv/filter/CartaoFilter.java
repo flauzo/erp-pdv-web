@@ -31,5 +31,4 @@ public class CartaoFilter {
 	public void setData_recebimento(String data_recebimento) {
 		this.data_recebimento = data_recebimento;
 	}
-
 }
