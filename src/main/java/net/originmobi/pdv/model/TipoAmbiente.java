@@ -47,5 +47,4 @@ public class TipoAmbiente implements Serializable {
 	public void setTipo(int tipo) {
 		this.tipo = tipo;
 	}
-
 }

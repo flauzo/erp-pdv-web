@@ -26,7 +26,7 @@ public class Pessoa implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@NotBlank(message = "nome não pode ser vazio")
+	@NotBlank(message = "nome não pode ser vazio.")
 	@Size(min = 5, max = 250)
 	private String nome;
 
@@ -135,5 +135,4 @@ public class Pessoa implements Serializable {
 	public void setTelefone(List<Telefone> telefone) {
 		this.telefone = telefone;
 	}
-
 }

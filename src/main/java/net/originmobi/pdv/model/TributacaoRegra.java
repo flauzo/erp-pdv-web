@@ -17,7 +17,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import net.originmobi.pdv.enumerado.EntradaSaida;
 
 @Entity
-
 public class TributacaoRegra implements Serializable {
 
 	private static final long serialVersionUID = 1L;

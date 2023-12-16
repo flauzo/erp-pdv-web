@@ -23,8 +23,8 @@ public class Telefone implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@NotNull(message = "Favor, informe o telefone")
-	@Size(max = 15, message = "Tamanho máximo de 15 caracteres")
+	@NotNull(message = "Favor, informe o telefone.")
+	@Size(max = 15, message = "Tamanho máximo de 15 caracteres.")
 	private String fone;
 
 	@NotNull
@@ -73,5 +73,4 @@ public class Telefone implements Serializable {
 	public TelefoneTipo getTipo() {
 		return tipo;
 	}
-
 }

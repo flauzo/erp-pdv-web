@@ -143,5 +143,4 @@ public class Recebimento implements Serializable {
 	public void setTitulo(Titulo titulo) {
 		this.titulo = titulo;
 	}
-
 }

@@ -27,7 +27,7 @@ public class Transferencia implements Serializable {
 	private Double valor;
 
 	@NotNull(message = "Observação, não pode ser vazia.")
-	@Size(max = 255, message = "Limite de 255 caracteres para observação.")
+	@Size(max = 255, message = "Limite de 255 caracteres para Observação.")
 	private String observacao;
 
 	@DateTimeFormat(pattern = "dd/MM/yyyy")

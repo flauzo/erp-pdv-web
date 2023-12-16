@@ -61,5 +61,4 @@ public class RecebimentoParcela implements Serializable {
 	public void setParcela(Long parcela) {
 		this.parcela = parcela;
 	}
-
 }

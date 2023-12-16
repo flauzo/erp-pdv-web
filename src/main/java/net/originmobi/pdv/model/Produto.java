@@ -62,7 +62,7 @@ public class Produto implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Ativo ativo;
 
-	@Size(max = 10, message = "Unidade de conter no máximo 10 caracteres")
+	@Size(max = 10, message = "Unidade de conter no máximo 10 caracteres.")
 	private String unidade;
 
 	@Enumerated(EnumType.ORDINAL)
@@ -268,5 +268,4 @@ public class Produto implements Serializable {
 	public void setControla_estoque(ProdutoControleEstoque controla_estoque) {
 		this.controla_estoque = controla_estoque;
 	}
-
 }

@@ -44,5 +44,4 @@ public class ProdutoEstoque implements Serializable {
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
-
 }

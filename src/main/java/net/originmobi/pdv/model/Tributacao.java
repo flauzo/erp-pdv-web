@@ -23,7 +23,7 @@ public class Tributacao implements Serializable {
 	private Long codigo;
 
 	@NotBlank(message = "Descrição não pode ser em branco.")
-	@Size(min = 4, max = 255, message = "Quantidade minima de caracteres é de 4 e máxima de 100.")
+	@Size(min = 4, max = 255, message = "Quantidade Minima de caracteres é de 4 e máxima de 100.")
 	private String descricao;
 
 	private Boolean subs_tributaria;

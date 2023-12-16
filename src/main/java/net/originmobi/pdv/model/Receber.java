@@ -24,7 +24,7 @@ public class Receber implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@NotNull(message = "Observação não pode ser vazia")
+	@NotNull(message = "Observação não pode ser vazia.")
 	@Size(max = 255)
 	private String observacao;
 
@@ -100,5 +100,4 @@ public class Receber implements Serializable {
 	public void setVenda(Venda venda) {
 		this.venda = venda;
 	}
-
 }

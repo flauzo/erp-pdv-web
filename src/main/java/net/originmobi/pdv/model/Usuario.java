@@ -24,8 +24,8 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 
-	@NotBlank(message = "Usuário não pode ser vazio")
-	@Size(min = 3, max = 20, message = "Tamanha minimo de 4 caracteres e máximo de 20 para usuario.")
+	@NotBlank(message = "Usuário não pode ser vazio.")
+	@Size(min = 3, max = 20, message = "Tamanha Minimo de 4 caracteres e máximo de 20 para usuario.")
 	private String user;
 
 	@NotBlank(message = "Senha não pode ser vazia.")
