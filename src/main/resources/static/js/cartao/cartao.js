@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	// Responsável por realizar o processamento
+	// Responsável por realizar o processamento.
 	$('#body-cartao').on('click', '.btn-processar-cartao', function(event) {
 		event.preventDefault();
 
@@ -34,7 +34,7 @@ $(document).ready(function() {
 		});
 	});
 	
-	// Responsável por realizar a antecipação
+	// Responsável por realizar a antecipação.
 	$('#body-cartao').on('click', '.btn-antecipar-cartao', function(event) {
 		event.preventDefault();
 		
