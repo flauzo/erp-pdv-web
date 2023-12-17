@@ -1,21 +1,21 @@
--- MySQL Workbench Forward Engineering
+-- MySQL Workbench Forward Engineering (Engenharia avançada de bancada).
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema pdv
+-- Schema pdv ("point of sale", POS).
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema pdv
+-- Esquema pdv ("point of sale", POS).
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `pdv` DEFAULT CHARACTER SET utf8 ;
 USE `pdv` ;
 
 -- -----------------------------------------------------
--- Table `pdv`.`pais`
+-- Table `pdv`.`pais` (`country`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`pais` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -24,9 +24,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`pais` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`estado`
+-- Table `pdv`.`estado` (`state`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`estado` (
   `codigo` INT(11) NOT NULL,
@@ -43,9 +42,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`estado` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`cidade`
+-- Table `pdv`.`cidade` (`city`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`cidade` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -61,9 +59,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`cidade` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`endereco`
+-- Table `pdv`.`endereco` (`address`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`endereco` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -84,9 +81,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`endereco` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`telefone`
+-- Table `pdv`.`telefone` (`phone`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`telefone` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -97,9 +93,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`telefone` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`fornecedor`
+-- Table `pdv`.`fornecedor` (`supplier`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`fornecedor` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -122,9 +117,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`fornecedor` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`fornecedor_telefone`
+-- Table `pdv`.`fornecedor_telefone` (`telephone_supplier`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`fornecedor_telefone` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -145,9 +139,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`fornecedor_telefone` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`grupo`
+-- Table `pdv`.`grupo` (`group`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`grupo` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -157,9 +150,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`grupo` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`categoria`
+-- Table `pdv`.`categoria` (`category`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`categoria` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -169,9 +161,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`categoria` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`regime_tributario`
+-- Table `pdv`.`regime_tributario` (`tax_regime`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`regime_tributario` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -182,9 +173,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`regime_tributario` (
   UNIQUE INDEX `tipo_regime_UNIQUE` (`tipo_regime` ASC))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`tipo_ambiente`
+-- Table `pdv`.`tipo_ambiente` (`environment_type`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`tipo_ambiente` (
   `codigo` INT(11) NOT NULL,
@@ -193,9 +183,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`tipo_ambiente` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`empresa_parametros`
+-- Table `pdv`.`empresa_parametros` (`company_parameters`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`empresa_parametros` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -211,9 +200,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`empresa_parametros` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`empresa`
+-- Table `pdv`.`empresa` (`company`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`empresa` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -246,9 +234,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`empresa` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`tributacao`
+-- Table `pdv`.`tributacao` (`taxation`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`tributacao` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -267,9 +254,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`tributacao` (
 ENGINE = InnoDB
 COMMENT = 'Tabela criada com o objetivo de cadastrar as regras fiscais dos produtos.\n\nO campor subTributaria deve conter o valor ZERO para não substituição e UM quando a regra for de substituição tributaria.';
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`mod_bc_icms`
+-- Table `pdv`.`mod_bc_icms` (`mod_bc_icms`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`mod_bc_icms` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -279,9 +265,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`mod_bc_icms` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`produto`
+-- Table `pdv`.`produto` (`product`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`produto` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -338,9 +323,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`produto` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`produto_imagem`
+-- Table `pdv`.`produto_imagem` (`product_image`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`produto_imagem` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -358,9 +342,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`produto_imagem` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`pessoa`
+-- Table `pdv`.`pessoa` (`person`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`pessoa` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -382,9 +365,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`pessoa` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`pessoa_telefone`
+-- Table `pdv`.`pessoa_telefone` (`person_phone`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`pessoa_telefone` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -405,9 +387,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`pessoa_telefone` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`usuario`
+-- Table `pdv`.`usuario` (`user`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`usuario` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -427,9 +408,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`usuario` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`caixa`
+-- Table `pdv`.`caixa` (`cashier`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`caixa` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -455,9 +435,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`caixa` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`pagartipo`
+-- Table `pdv`.`pagartipo` (`paytype`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`pagartipo` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -467,9 +446,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`pagartipo` (
 ENGINE = InnoDB
 COMMENT = ' Esta tabela sera responsável or guardar os tipos de pagar, ex: FORNECEDOR, MERCADO, FUNCIONARIO.';
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`pagar`
+-- Table `pdv`.`pagar` (`pay`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`pagar` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -494,9 +472,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`pagar` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`parcela_pagar`
+-- Table `pdv`.`parcela_pagar` (`installment_pay`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`parcela_pagar` (
   `codigo` INT NOT NULL AUTO_INCREMENT,
@@ -520,9 +497,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`parcela_pagar` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`titulo_tipo`
+-- Table `pdv`.`titulo_tipo` (`type_title`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`titulo_tipo` (
   `codigo` INT(11) NOT NULL,
@@ -533,9 +509,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`titulo_tipo` (
 ENGINE = InnoDB
 COMMENT = ' Esta tabela contera as informações dos tipos de titulos, DIN, CART CRED, CART DEBI.';
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`maquina_cartao`
+-- Table `pdv`.`maquina_cartao` (`card_machine`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`maquina_cartao` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -556,9 +531,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`maquina_cartao` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`titulo`
+-- Table `pdv`.`titulo` (`headline`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`titulo` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -580,9 +554,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`titulo` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`recebimento`
+-- Table `pdv`.`recebimento` (`receivement`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`recebimento` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -611,9 +584,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`recebimento` (
 ENGINE = InnoDB
 COMMENT = ' Esta tabela é responsável por guardar as informações da rotina de recebimento de parcelas do receber.';
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`caixa_lancamento`
+-- Table `pdv`.`caixa_lancamento` (`launch_box`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`caixa_lancamento` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -654,9 +626,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`caixa_lancamento` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`venda`
+-- Table `pdv`.`venda` (`sale`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`venda` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -686,9 +657,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`venda` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`venda_produtos`
+-- Table `pdv`.`venda_produtos` (`sale_products`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`venda_produtos` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -711,9 +681,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`venda_produtos` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`grupousuario`
+-- Table `pdv`.`grupousuario` (`usergroup`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`grupousuario` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -723,9 +692,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`grupousuario` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`permissoes`
+-- Table `pdv`.`permissoes` (`permissions`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`permissoes` (
   `codigo` INT(11) NOT NULL,
@@ -735,9 +703,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`permissoes` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`permissoes_grupo_usuario`
+-- Table `pdv`.`permissoes_grupo_usuario` (`user_group_permissions`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`permissoes_grupo_usuario` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -758,9 +725,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`permissoes_grupo_usuario` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`usuario_permissoes`
+-- Table `pdv`.`usuario_permissoes` (`user_permissions`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`usuario_permissoes` (
   `usuario_codigo` INT(11) NOT NULL,
@@ -780,9 +746,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`usuario_permissoes` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`usuario_grupousuario`
+-- Table `pdv`.`usuario_grupousuario` (`user_groupuser`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`usuario_grupousuario` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -803,9 +768,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`usuario_grupousuario` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`pagamento_tipo`
+-- Table `pdv`.`pagamento_tipo` (`payment_type`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`pagamento_tipo` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -817,9 +781,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`pagamento_tipo` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`pagamento_tipo_venda`
+-- Table `pdv`.`pagamento_tipo_venda` (`payment_type_sale`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`pagamento_tipo_venda` (
   `ven_codigo` INT(11) NOT NULL,
@@ -839,9 +802,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`pagamento_tipo_venda` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`receber`
+-- Table `pdv`.`receber` (`receive`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`receber` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -867,9 +829,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`receber` (
 ENGINE = InnoDB
 COMMENT = 'Tabela para gravar os titulos a receber dos clientes.';
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`parcela`
+-- Table `pdv`.`parcela` (`parcel`)
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`parcela` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -894,9 +855,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`parcela` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`transferencia`
+-- Table `pdv`.`transferencia` (`transfer`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`transferencia` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -929,9 +889,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`transferencia` (
 ENGINE = InnoDB
 COMMENT = 'Tabela criada com o objetivo de ser utilizada para guardar os dados de transferencias entre caixa e cofre.';
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`recebimento_parcelas`
+-- Table `pdv`.`recebimento_parcelas` (`receiving_installments`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`recebimento_parcelas` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -952,9 +911,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`recebimento_parcelas` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`cst_csosn`
+-- Table `pdv`.`cst_csosn` (`cst_csosn`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`cst_csosn` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -963,9 +921,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`cst_csosn` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`cst`
+-- Table `pdv`.`cst` (`cst`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`cst` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -975,9 +932,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`cst` (
 ENGINE = InnoDB
 COMMENT = ' Esta tabela guardara os códigos cest do pis e cofins';
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`cfop`
+-- Table `pdv`.`cfop` (`cfop`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`cfop` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -987,9 +943,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`cfop` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`cst_ipi`
+-- Table `pdv`.`cst_ipi` (`cst_ipi`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`cst_ipi` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1000,9 +955,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`cst_ipi` (
 ENGINE = InnoDB
 COMMENT = 'O campo tipo guarda a informação se o mesmo é ENTRADA ou SAÍDA.';
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`tributacao_regra`
+-- Table `pdv`.`tributacao_regra` (`taxation_rule`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`tributacao_regra` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1060,9 +1014,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`tributacao_regra` (
 ENGINE = InnoDB
 COMMENT = 'O campo tipo define se é entrada ou saída';
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`mva`
+-- Table `pdv`.`mva` (`mva`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`mva` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1080,9 +1033,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`mva` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`nota_fiscal`
+-- Table `pdv`.`nota_fiscal` (`tax_invoice`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`nota_fiscal` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1144,9 +1096,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`nota_fiscal` (
 ENGINE = InnoDB
 COMMENT = 'tipo_emissao é pra tag tpEmis e pode ter os seguintes valores: 1 - Normal, 2 - contigência, 3';
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`nota_fiscal_totais`
+-- Table `pdv`.`nota_fiscal_totais` (`tax_invoice_totals`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`nota_fiscal_totais` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1166,9 +1117,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`nota_fiscal_totais` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`frete_tipo`
+-- Table `pdv`.`frete_tipo` (`type_shipping`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`frete_tipo` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1177,9 +1127,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`frete_tipo` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`nota_fiscal_finalidade`
+-- Table `pdv`.`nota_fiscal_finalidade` (`tax_invoice_finality`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`nota_fiscal_finalidade` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1188,9 +1137,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`nota_fiscal_finalidade` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`nota_fiscal`
+-- Table `pdv`.`nota_fiscal` (`tax_invoice`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`nota_fiscal` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1252,9 +1200,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`nota_fiscal` (
 ENGINE = InnoDB
 COMMENT = 'tipo_emissao é pra tag tpEmis e pode ter os seguintes valores: 1 - Normal, 2 - contigência, 3';
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`nota_fiscal_item_imposto`
+-- Table `pdv`.`nota_fiscal_item_imposto` (`tax_invoice_tax_item`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`nota_fiscal_item_imposto` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1279,9 +1226,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`nota_fiscal_item_imposto` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`nota_fiscal_item`
+-- Table `pdv`.`nota_fiscal_item` (`tax_invoice_item`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`nota_fiscal_item` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1310,9 +1256,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`nota_fiscal_item` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`cartao_lancamento`
+-- Table `pdv`.`cartao_lancamento` (`launch_card`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`cartao_lancamento` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1339,9 +1284,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`cartao_lancamento` (
 ENGINE = InnoDB
 COMMENT = ' Nesta tabela serão gurdados os registro dos cartões quando for realizado um venda com este tipo de titulo.\n\n- O campo tipo guardara a informação: DEBITO, CREDITO.';
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`estoque_movimentacao`
+-- Table `pdv`.`estoque_movimentacao` (`stock_movement`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`estoque_movimentacao` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1361,9 +1305,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`estoque_movimentacao` (
 ENGINE = InnoDB
 COMMENT = ' Registra as movimentações de entrada e saída dos produtos.\n\n Campo TIPO, guarda a informação se é ENTRADA ou SAÍDA.';
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`produto_estoque`
+-- Table `pdv`.`produto_estoque` (`stock_product`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`produto_estoque` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1381,9 +1324,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`produto_estoque` (
 ENGINE = InnoDB
 COMMENT = ' Esta tabela recebe um insert quando a tabela estoque_movimentacao recebe um insert.';
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`ajuste`
+-- Table `pdv`.`ajuste` (`adjust`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`ajuste` (
   `codigo` INT NOT NULL AUTO_INCREMENT,
@@ -1396,9 +1338,8 @@ CREATE TABLE IF NOT EXISTS `pdv`.`ajuste` (
   PRIMARY KEY (`codigo`))
 ENGINE = InnoDB;
 
-
 -- -----------------------------------------------------
--- Table `pdv`.`ajuste_produtos`
+-- Table `pdv`.`ajuste_produtos` (`adjust products`).
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pdv`.`ajuste_produtos` (
   `codigo` INT(11) NOT NULL AUTO_INCREMENT,
@@ -1515,7 +1456,6 @@ BEGIN
 			update produto_estoque set qtd = @novo_estoque where produto_codigo = @codprod;
 		end if;
 END;$$
-
 
 DELIMITER ;
 
