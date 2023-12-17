@@ -3,19 +3,19 @@ $(document).ready(function() {
 	$("#btnSubmit").click(function(event) {
 		event.preventDefault();
 
-		// get form
+		// get Form.
 		var form = $('#imageProdutoUpload')[0];
 
 		var codigo = $('#codigoProduto').val();
 		var link = $('.btn-upload-imagem').attr('href');
 
-		// cria um objeto formData
+		// cria um Objeto formData.
 		var data = new FormData(form);
 
-		// exemplo de como add campos extrás no formulário
+		// exemplo de como add campos extrás no Formulário.
 		data.append("codigo", codigo);
 
-		// disabilita o submit do botão
+		// disabilita o submit do Botão.
 		$('#btnSubmit').prop("disabled", false);
 
 		$.ajax({
@@ -40,7 +40,6 @@ $(document).ready(function() {
 				$("#btnSubmit").prop("disabled", false);
 				$(".upload-imagem-modal").modal('toggle');
 				$("#imagemDoProduto").load(" #imagemDoProduto");
-
 			},
 			error : function(e) {
 				$(".carrega").empty();
@@ -48,7 +47,6 @@ $(document).ready(function() {
 				$("#resultado").text(e.responseText);
 				console.log("ERROR : ", e);
 				$("#btnSubmit").prop("disabled", false);
-
 			}
 		});
 	});
