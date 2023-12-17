@@ -6,7 +6,7 @@ $(document).ready(function() {
 		var codmaquina = $(this).data('codmaquina');
 		var link = $('.btn-remove-maquina').attr('href') + codmaquina;
 		
-		var confirmar = confirm("Tem certeza que deseja excluir esta máquina?");
+		var confirmar = confirm("Tem certeza que deseja excluir esta Máquina?");
 		
 		if(confirmar == true)
 		
