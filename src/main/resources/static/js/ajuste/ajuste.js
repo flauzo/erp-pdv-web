@@ -38,7 +38,7 @@ $(document).ready(
 				});
 			});
 
-			// Responsável por adicionar os produtos no ajuste
+			// Responsável por adicionar os produtos no ajuste.
 			$('.body_ajuste').on(
 					'click', '.btn-addajuste-produto',
 					function(event) {
@@ -47,7 +47,7 @@ $(document).ready(
 						var codprod = $('#codigoProduto').val();
 						var codajuste = $('#codajuste').val();
 						
-						var qtd_alterar = prompt("Informe a quantidade que deseja alterar");
+						var qtd_alterar = prompt("Informe a Quantidade que deseja alterar");
 						
 						var link = $('.btn-addajuste-produto').attr('href')
 								+ '?codprod=' + codprod + '&codajuste='
@@ -75,7 +75,7 @@ $(document).ready(
 						});
 					});
 			
-			// Responsável por processar o ajuste
+			// Responsável por processar o ajuste.
 			$('.body_ajuste').on('click', '.btn-ajuste-processar', function(event) {
 				event.preventDefault();
 				
@@ -84,7 +84,7 @@ $(document).ready(
 				
 				var link = $('.btn-ajuste-processar').attr('href') + '?codajuste=' + codajuste + '&obs=' + obs;
 				
-				var confirmado = confirm("Tem certeza que deseja processar este ajuste?");
+				var confirmado = confirm("Tem certeza que deseja Processar este ajuste?");
 				
 				if(confirmado == true)
 				
@@ -115,14 +115,14 @@ $(document).ready(
 				});
 			});
 			
-			// Responsável por cancelar um ajuste
+			// Responsável por cancelar um ajuste.
 			$('.body_ajuste').on('click', '.btn-ajuste-cancelar', function(event) {
 				event.preventDefault();
 				
 				var codajuste = $('#codajuste').val();
 				var link = $('.btn-ajuste-cancelar').attr('href') + codajuste;
 				
-				var confirmado = confirm("Tem certeza que deseja cancelar este ajuste?");
+				var confirmado = confirm("Tem certeza que deseja Cancelar este ajuste?");
 				
 				if(confirmado == true)
 				
@@ -160,7 +160,7 @@ $(document).ready(
 				
 				var link = $('.btn-remove-item-ajuste').attr('href') + '?codajuste=' + codajuste + '&coditem=' + coditem;
 				
-				var confirmado = confirm("Tem certeza que deseja remover este item?");
+				var confirmado = confirm("Tem certeza que deseja Remover este item?");
 				
 				if(confirmado == true)
 				
@@ -179,7 +179,7 @@ $(document).ready(
 						alert(e);
 						$('#tabela-produtos').load(' #tabela-produtos');
 					},
-					
+
 					error : function(jqXHR, status, error) {
 						$(".carrega").empty();
 						var err = eval("(" + jqXHR.responseText + ")");
