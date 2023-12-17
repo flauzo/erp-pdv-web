@@ -1,6 +1,6 @@
 $(document).ready(
 		function() {
-			// responsável por realizar o recebimento da parcela
+			// responsável por realizar o recebimento da parcela.
 
 			receber = 0;
 
@@ -24,7 +24,7 @@ $(document).ready(
 												".", ","));
 							});
 
-			// Responsável por finalizar o recebimento
+			// Responsável por finalizar o recebimento.
 			$(".btn-recebimento").on(
 					'click',
 					function(event) {
@@ -52,13 +52,13 @@ $(document).ready(
 							success : function(e) {
 								$(".carrega").empty();
 								if (e == "ok")
-									alert("Recebimento realizado com sucesso");
+									alert("Recebimento realizado com sucesso.");
 								else if (e == "titulo quitado")
-									alert("Este titulo já esta quitado");
+									alert("Este titulo já esta quitado.");
 								else if (e == "valor invalido")
-									alert("O valor de recebimento é inválido");
+									alert("O valor de recebimento é inválido.");
 								else if (e == "caixa fechado")
-									alert("Nenhum caixa aberto");
+									alert("Nenhum caixa aberto.");
 
 								$(".modalReceber").modal('toggle');
 								$(".table-receber").load(" .table-receber");	
@@ -66,13 +66,12 @@ $(document).ready(
 							
 							error : function(jqXHR, status, error) {
 								$(".carrega").empty();
-								alert("Falha ao tentar receber, chame o suporte");
-								
+								alert("Falha ao tentar receber, chame o suporte.");
 							}
 						});
 					});
 
-			// pega os receber checked e redireciona para a tela do recebimento
+			// pega os receber checked e redireciona para a tela do recebimento.
 			$('.btn-receber-varios').on(
 					'click',
 					function(e) {
@@ -113,7 +112,7 @@ $(document).ready(
 						});
 					});
 
-			// Responsável por listar os titulos do clinte selecionado
+			// Responsável por listar os titulos do clinte selecionado.
 			$('.btn-busca-cliente').on(
 					'click',
 					function(e) {
