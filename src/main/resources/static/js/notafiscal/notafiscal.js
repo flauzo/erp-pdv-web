@@ -1,6 +1,6 @@
 $(function() {
 
-	// Responsável por cadastrar a nota fiscal
+	// Responsável por cadastrar a nota fiscal.
 	$('.btn-cria-nota').on('click', function(event) {
 		event.preventDefault();
 
@@ -34,7 +34,7 @@ $(function() {
 		});
 	});
 
-	// Responsável por inserir itens na nota
+	// Responsável por inserir itens na nota.
 	$('.body-itens-nota').on(
 			'click',
 			'.btn-addnota-produto',
@@ -92,7 +92,6 @@ $(function() {
 					$(".carrega").html(
 					"<p class='carregando'></p>");
 				},
-				
 
 				success : function(e) {
 					$(".carrega").empty();
@@ -108,7 +107,7 @@ $(function() {
 			});
 	});
 
-	// Responsável pela emissão da nfe
+	// Responsável pela emissão da nfe.
 	$('.btn-emitir-nfe').on('click', function(event) {
 		event.preventDefault();
 
@@ -135,5 +134,4 @@ $(function() {
 			}
 		});
 	});
-
 });
