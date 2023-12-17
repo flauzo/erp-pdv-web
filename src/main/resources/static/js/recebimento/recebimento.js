@@ -3,7 +3,7 @@ $(document)
 				function() {
 
 					// verifica se o recebimento esta fechado e desbilita os
-					// inputs
+					// inputs.
 					processamento = $('#processamento').val();
 
 					if (processamento == '' || processamento == null) {
@@ -15,7 +15,7 @@ $(document)
 						$('#titulo').prop('disabled', true);
 					}
 
-					// responsável pelo recebimento
+					// responsável pelo recebimento.
 					$('#body-recebimento').on(
 							'click',
 							'.btn-receber-titulo',
@@ -70,7 +70,7 @@ $(document)
 								});
 							});
 
-					// responsável pela exclusão do recebimento
+					// responsável pela exclusão do recebimento.
 					$('#body-recebimento')
 							.on(
 									'click',
@@ -110,7 +110,6 @@ $(document)
 															alert(err.message);
 														}
 													});
-
 									});
 
 					function mascaraValor(valor) {
