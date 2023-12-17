@@ -1,6 +1,6 @@
 $(function() {
 
-	// responsável por desabilitar os componentes da tela de caixa
+	// responsável por desabilitar os componentes da tela de caixa.
 	var codigo = $('#dataFechamantoCaixa').val();
 
 	if (codigo == null || codigo == "") {
@@ -15,7 +15,7 @@ $(function() {
 		$("#btnfechacaixa").prop("disabled", true);
 	}
 
-	// limpa dados do modal de suprimento
+	// limpa dados do modal de suprimento.
 	$('#btnSuprimento').on('click', function(e) {
 		e.preventDefault();
 
@@ -23,7 +23,7 @@ $(function() {
 		$("input[name='observacao']").val("");
 	});
 
-	// Responsável por abrir o caixa
+	// Responsável por abrir o caixa.
 	$('.btn-abrir-caixa').on('click', function(event) {
 		event.preventDefault();
 
@@ -56,7 +56,7 @@ $(function() {
 		});
 	});
 
-	// responsavel pelo suprimento
+	// responsavel pelo suprimento.
 	$('#secGerenciar').on(
 			'click',
 			'.btn-suprimento-caixa',
@@ -100,7 +100,7 @@ $(function() {
 
 			});
 
-	// limpa os inputs do modal da samgria quando o mesmo é aberto
+	// limpa os inputs do modal da samgria quando o mesmo é aberto.
 	$('#btnSangria').on('click', function(event) {
 		event.preventDefault();
 
@@ -108,7 +108,7 @@ $(function() {
 		$("input[name='observacao']").val("");
 	});
 
-	// responsável pela sangria
+	// responsável pela sangria.
 	$('#secGerenciar').on(
 			'click',
 			'.btn-Sangria-Sangria',
@@ -150,7 +150,7 @@ $(function() {
 				});
 			});
 
-	// responsável pelo fechamento do caixa
+	// responsável pelo fechamento do caixa.
 	$('.btn-fechar-caixa').on(
 			'click',
 			function(event) {
@@ -195,8 +195,8 @@ $(function() {
 				});
 			});
 
-	// Responsável por adiconar os inputs de agência e conta quando o tipo BANCO
-	// é selecionado
+	// Responsável por adiconar os Inputs de agência e conta quando o tipo BANCO
+	// é selecionado.
 	$('#caixatipo')
 			.change(
 					function() {
