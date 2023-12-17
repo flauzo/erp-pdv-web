@@ -9,7 +9,7 @@ $(document).ready(
 				$("option[name='fornecedor']").val("");
 			});
 
-			// cadastra despesa
+			// cadastra despesa.
 			$('.secDespesas').on(
 					'click',
 					'.btn-despesa',
@@ -35,7 +35,6 @@ $(document).ready(
 								$(".carrega").html(
 								"<p class='carregando'></p>");
 							},
-							
 
 							success : function(e) {
 								$(".carrega").empty();
@@ -55,7 +54,7 @@ $(document).ready(
 						});
 					});
 
-			// váriaveis globais utilizadas para o pagamento
+			// váriaveis globais utilizadas para o pagamento.
 			valor = 0;
 			codpagar = 0;
 			$('.bodypagar')
@@ -78,10 +77,9 @@ $(document).ready(
 
 								$("input[name='acrescimo']").val("");
 								$("input[name='desconto']").val("");
-
 							});
 
-			// Responsável por realizar o pagamento da despesa
+			// Responsável por realizar o pagamento da despesa.
 			$('.bodypagar').on(
 					'click',
 					'.btn-pag-despesa',
