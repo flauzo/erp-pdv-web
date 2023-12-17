@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="comanda" pageWidth="452" pageHeight="225" columnWidth="412" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" isIgnorePagination="true" uuid="bb5addeb-a5f4-4955-873b-263c1aed0aab">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="pdv"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="pdv (point of sale)"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.unit." value="cm"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
@@ -79,9 +79,11 @@ and
 		<property name="com.jaspersoft.studio.field.label" value="cliente"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
 	</field>
+
 	<background>
 		<band splitType="Stretch"/>
 	</background>
+
 	<title>
 		<band height="30" splitType="Stretch">
 			<staticText>
@@ -93,6 +95,7 @@ and
 			</staticText>
 		</band>
 	</title>
+
 	<pageHeader>
 		<band height="42" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
@@ -112,6 +115,7 @@ and
 			</textField>
 		</band>
 	</pageHeader>
+
 	<columnHeader>
 		<band height="20" splitType="Stretch">
 			<staticText>
@@ -143,6 +147,7 @@ and
 			</staticText>
 		</band>
 	</columnHeader>
+
 	<detail>
 		<band height="20">
 			<property name="com.jaspersoft.studio.layout"/>
@@ -176,6 +181,7 @@ and
 			</textField>
 		</band>
 	</detail>
+
 	<columnFooter>
 		<band height="48">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
@@ -202,4 +208,5 @@ and
 			</staticText>
 		</band>
 	</columnFooter>
+
 </jasperReport>
