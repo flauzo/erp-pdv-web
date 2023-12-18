@@ -1,4 +1,4 @@
-# erp-pdv-web-v3.0
+# erp-pdv-web
 Sistema Enterprise Resource Planning (**ERP**) web de **PDV** ( *Ponto de Venda* [*Point of Sale* "*POS*"] ), desenvolvido em Java com Spring Framework. 
 
 # Recursos.
