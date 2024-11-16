@@ -10,7 +10,7 @@
 	<packaging>war</packaging>
 
 	<name>pdv</name>
-	<description></description>
+	<description>PDV Ponto de Venda [Point of Sale "POS"]</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -107,3 +107,4 @@
 	</build>
 
 </project>
+
