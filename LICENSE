@@ -13,16 +13,16 @@
       "Licenciante" significa o proprietário dos direitos autorais ou entidade autorizada por
       o proprietário dos direitos autorais que está concedendo a licença.
 
-      "Legal Entity" shall mean the union of the acting entity and all
-      other entities that control, are controlled by, or are under common
-      control with that entity. For the purposes of this definition,
-      "control" means (i) the power, direct or indirect, to cause the
-      direction or management of such entity, whether by contract or
-      otherwise, or (ii) ownership of fifty percent (50%) or more of the
-      outstanding shares, or (iii) beneficial ownership of such entity.
+      "Entidade Legal" significa a união da entidade atuante e todas
+      as outras entidades que controlam, são controladas por, ou estão sob controle
+      comum com essa entidade. Para os propósitos desta definição,
+      "controle" significa (i) o poder, direto ou indireto, de causar a
+      direção ou gestão de tal entidade, seja por contrato ou
+      de outra forma, ou (ii) propriedade de cinquenta por cento (50%) ou mais das
+      ações em circulação, ou (iii) propriedade benéfica de tal entidade.
 
-      "You" (or "Your") shall mean an individual or Legal Entity
-      exercising permissions granted by this License.
+      "Você" (ou "Seu") significa um indivíduo ou Entidade Legal
+      exercendo permissões concedidas por esta Licença.
 
       "Source" form shall mean the preferred form for making modifications,
       including but not limited to software source code, documentation
@@ -200,3 +200,4 @@
    SEM GARANTIAS OU CONDIÇÕES DE QUALQUER TIPO, expressas ou implícitas.
    Consulte a Licença para o idioma específico que rege as permissões e
    limitações sob a Licença.
+
